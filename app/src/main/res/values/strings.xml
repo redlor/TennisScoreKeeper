@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Let\'s play Tennis</string>
+    <string name="label_main_title">Udacity Open</string>
+    <string name="hint_enter_name">Insert Name</string>
+    <string name="btn_enter_button">Start</string>
+    <string name="lbl_3sets">3 Sets Match</string>
+    <string name="lbl_5sets">5 Sets Match</string>
+    <string name="player1_name">Player1</string>
+    <string name="player2_name">Player2</string>
+    <string name="lbl_serve">Serve</string>
+    <string name="score">0</string>
+    <string name="games">Games</string>
+    <string name="sets">Sets</string>
+    <string name="fifteen_button">+15</string>
+    <string name="ace_button">ACE</string>
+    <string name="winner_button">WINNER</string>
+    <string name="error_button">ERROR</string>
+    <string name="points_won_txt">Points won</string>
+    <string name="ace_txt">Aces</string>
+    <string name="winner_txt">Winners</string>
+    <string name="error_txt">Errors</string>
+    <string name="stats_button">STATS</string>
+    <string name="RESET">RESET</string>
+    <string name="tie_player2">T+1 P2</string>
+    <string name="reset">Reset</string>
+    <string name="main_menu_button">Main Menu</string>
+    <string name="reset_all_button">All</string>
+    <string name="txt_back_to_match">Press back to continue the match</string>
+
+</resources>

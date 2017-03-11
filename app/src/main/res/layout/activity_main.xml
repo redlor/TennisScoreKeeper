@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/tennisfield"
+    android:orientation="vertical"
+    tools:context="com.example.android.tennisscorekeeper.FiveSetsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/smallMargin"
+        android:layout_marginTop="@dimen/bigMargin"
+        android:orientation="horizontal">
+
+        <!--<EditText
+            android:id="@+id/text_player_1"
+            style="@style/PlayerText"
+            android:hint="@string/player1_name"/>-->
+        <ImageView
+            android:id="@+id/ball_player1"
+            style="@style/ballImage" />
+
+        <android.support.v7.widget.CardView
+            style="@style/card"
+            app:cardBackgroundColor="@color/cardBackground"
+            app:cardUseCompatPadding="true">
+
+            <TextView
+                android:id="@+id/player_top_1"
+                style="@style/playerText"
+                android:text="@string/player1_name" />
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            style="@style/card"
+            app:cardBackgroundColor="@color/cardBackground"
+            app:cardUseCompatPadding="true">
+
+            <RelativeLayout style="@style/relative_layout_set_point">
+
+                <TextView
+                    android:id="@+id/set_1_score_player1"
+                    style="@style/SetScoreText" />
+
+                <TextView
+                    android:id="@+id/set_1_tie_player1"
+                    style="@style/tieScoreText"
+                    android:layout_toRightOf="@id/set_1_score_player1" />
+
+
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            style="@style/card"
+            app:cardBackgroundColor="@color/cardBackground"
+            app:cardUseCompatPadding="true">
+
+            <RelativeLayout
+                style="@style/relative_layout_set_point">
+
+                <TextView
+                    android:id="@+id/set_2_score_player1"
+                    style="@style/SetScoreText" />
+
+                <TextView
+                    android:id="@+id/set_2_tie_player1"
+                    style="@style/tieScoreText"
+                    android:layout_toRightOf="@id/set_2_score_player1" />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            style="@style/card"
+            android:id="@+id/card_3_set_player1"
+            app:cardBackgroundColor="@color/cardBackground"
+            app:cardUseCompatPadding="true">
+
+            <RelativeLayout
+                style="@style/relative_layout_set_point">
+
+                <TextView
+                    android:id="@+id/set_3_score_player1"
+                    style="@style/SetScoreText" />
+
+                <TextView
+                    android:id="@+id/set_3_tie_player1"
+                    style="@style/tieScoreText"
+                    android:layout_toRightOf="@id/set_3_score_player1" />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_4_set_player1"
+            style="@style/card"
+            app:cardBackgroundColor="@color/cardBackground"
+            app:cardUseCompatPadding="true">
+
+            <RelativeLayout
+                style="@style/relative_layout_set_point">
+
+                <TextView
+                    android:id="@+id/set_4_score_player1"
+                    style="@style/SetScoreText" />
+
+                <TextView
+                    android:id="@+id/set_4_tie_player1"
+                    style="@style/tieScoreText"
+                    android:layout_toRightOf="@id/set_4_score_player1" />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_5_set_player1"
+            style="@style/card"
+            app:cardBackgroundColor="@color/cardBackground"
+            app:cardUseCompatPadding="true">
+
+            <RelativeLayout
+                style="@style/relative_layout_set_point">
+
+                <TextView
+                    android:id="@+id/set_5_score_player1"
+                    style="@style/SetScoreText" />
+
+                <TextView
+                    android:id="@+id/set_5_tie_player1"
+                    style="@style/tieScoreText"
+                    android:layout_toRightOf="@id/set_5_score_player1" />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_point_player1"
+            style="@style/card"
+            app:cardBackgroundColor="@color/cardBackground"
+            app:cardUseCompatPadding="true">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+
+                <TextView
+                    android:id="@+id/player_1_score"
+                    style="@style/GameScoreText"
+                    android:textColor="@color/textColorScore" />
+
+                <TextView
+                    android:id="@+id/player_1_score_tie"
+                    style="@style/GameScoreText"
+                    android:textColor="@color/tieBreakColor" />
+
+                <TextView
+                    android:id="@+id/advantage1"
+                    style="@style/AdvText"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignTop="@+id/player_1_score" />
+
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+      <!--  <EditText
+            android:id="@+id/text_player_2"
+            style="@style/PlayerText"
+            android:hint="@string/player2_name"/>-->
+        <ImageView
+            android:id="@+id/ball_player2"
+            style= "@style/ballImage"/>
+        <android.support.v7.widget.CardView
+            style="@style/card"
+            app:cardBackgroundColor="@color/cardBackground"
+            app:cardUseCompatPadding="true">
+        <TextView
+            android:id="@+id/player_top_2"
+            style="@style/playerText"
+            android:text="@string/player2_name" />
+        </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+        style="@style/card"
+        app:cardBackgroundColor="@color/cardBackground"
+        app:cardUseCompatPadding="true">
+        <RelativeLayout
+            style ="@style/relative_layout_set_point">
+        <TextView
+            android:id="@+id/set_1_score_player2"
+            style="@style/SetScoreText"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+            <TextView
+                android:id="@+id/set_1_tie_player2"
+                style="@style/tieScoreText"
+                android:layout_toRightOf="@id/set_1_score_player2"/>
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            style="@style/card"
+            app:cardBackgroundColor="@color/cardBackground"
+            app:cardUseCompatPadding="true">
+        <RelativeLayout
+            style ="@style/relative_layout_set_point">
+        <TextView
+            android:id="@+id/set_2_score_player2"
+            style="@style/SetScoreText"/>
+            <TextView
+                android:id="@+id/set_2_tie_player2"
+                style="@style/tieScoreText"
+                android:layout_toRightOf="@id/set_2_score_player2"/>
+        </RelativeLayout>
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            style="@style/card"
+            android:id="@+id/card_3_set_player2"
+            app:cardBackgroundColor="@color/cardBackground"
+            app:cardUseCompatPadding="true">
+        <RelativeLayout
+            style ="@style/relative_layout_set_point">
+        <TextView
+            android:id="@+id/set_3_score_player2"
+            style="@style/SetScoreText"/>
+            <TextView
+                android:id="@+id/set_3_tie_player2"
+                style="@style/tieScoreText"
+                android:layout_toRightOf="@id/set_3_score_player2"/>
+        </RelativeLayout>
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_4_set_player2"
+            style="@style/card"
+            app:cardBackgroundColor="@color/cardBackground"
+            app:cardUseCompatPadding="true">
+        <RelativeLayout
+            style ="@style/relative_layout_set_point">
+        <TextView
+            android:id="@+id/set_4_score_player2"
+            style="@style/SetScoreText"/>
+            <TextView
+                android:id="@+id/set_4_tie_player2"
+                style="@style/tieScoreText"
+                android:layout_toRightOf="@id/set_4_score_player2"/>
+        </RelativeLayout>
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_5_set_player2"
+            style="@style/card"
+            app:cardBackgroundColor="@color/cardBackground"
+            app:cardUseCompatPadding="true">
+        <RelativeLayout
+            style ="@style/relative_layout_set_point">
+        <TextView
+            android:id="@+id/set_5_score_player2"
+            style="@style/SetScoreText" />
+            <TextView
+                android:id="@+id/set_5_tie_player2"
+                style="@style/tieScoreText"
+                android:layout_toRightOf="@id/set_5_score_player2"/>
+        </RelativeLayout>
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_point_player2"
+            style="@style/card"
+            app:cardBackgroundColor="@color/cardBackground"
+            app:cardUseCompatPadding="true">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:id="@+id/player_2_score"
+                android:textColor= "@color/textColorScore"
+                style="@style/GameScoreText"/>
+
+            <TextView
+                android:id="@+id/player_2_score_tie"
+                android:textColor="@color/tieBreakColor"
+                style="@style/GameScoreText" />
+
+            <TextView
+                android:id="@+id/advantage2"
+                style="@style/AdvText" />
+
+        </RelativeLayout>
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal">
+
+
+        <!--<TextView
+            style="@style/TitleText"
+            android:text="@string/games" />-->
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/player_bottom_1"
+                style="@style/PlText"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/player1_name" />
+
+            <Button
+                style="@style/square_button"
+                android:onClick="addFifteenForPlayer1"
+                android:text="@string/fifteen_button" />
+
+            <Button
+                style="@style/square_button"
+                android:onClick="aceForPlayer1"
+                android:text="@string/ace_button" />
+            <Button
+                style="@style/square_button"
+                android:onClick="winnerPlayer1"
+                android:text="@string/winner_button" />
+
+            <Button
+                style="@style/square_button"
+                android:onClick="errorPlayer1"
+                android:text="@string/error_button" />
+
+
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/player_bottom_2"
+            style="@style/PlText"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/player2_name" />
+
+        <Button
+            style="@style/square_button"
+            android:onClick="addFifteenForPlayer2"
+            android:text="@string/fifteen_button" />
+        <Button
+            style="@style/square_button"
+            android:onClick="aceForPlayer2"
+            android:text="@string/ace_button" />
+        <Button
+            style="@style/square_button"
+            android:onClick="winnerPlayer2"
+            android:text="@string/winner_button" />
+        <Button
+            style="@style/square_button"
+            android:onClick="errorPlayer2"
+            android:text="@string/error_button" />
+      <!--  <Button
+            style="@style/Button"
+            android:onClick="AdvForPlayer2"
+            android:text="@string/advantage_button" />
+
+        <Button
+            style="@style/Button"
+            android:onClick="tiePlayer2"
+            android:text="@string/tie_player2" />-->
+
+    </LinearLayout>
+
+    </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/smallMargin"
+        android:background="@android:color/holo_orange_light"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btn_go_to_stats"
+            style="@style/resetButton"
+            android:layout_marginRight="@dimen/sideMargin"
+            android:background="@drawable/buttonshape"
+            android:scaleX="0.5"
+            android:text="@string/stats_button" />
+
+        <Button
+            android:id="@+id/btn_go_to_main_menu"
+            style="@style/resetButton"
+            android:layout_marginRight="@dimen/sideMargin"
+            android:background="@drawable/tennisball"
+            android:scaleX="1"
+            android:scaleY="1"
+            android:text="@string/main_menu_button" />
+
+        <Button
+            style="@style/resetButton"
+            android:background="@drawable/buttonshape"
+            android:onClick="resetAll"
+            android:scaleX="0.5"
+            android:text="@string/reset" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
+
