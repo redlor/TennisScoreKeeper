@@ -3,130 +3,143 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/cardBackground">
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:layout_alignParentTop="true"
-    android:layout_alignParentLeft="true"
-    android:layout_alignParentStart="true">
-    <TextView
-        style="@style/title"
-        android:textAlignment="center"
-        android:textSize="@dimen/textSizeScore"
-        android:layout_gravity="center"
-        android:text="@string/label_main_title" />
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/activity_vertical_margin"
-        android:src="@drawable/tennisracket"
-        android:layout_gravity="center_horizontal" />
-    <TextView
-        style="@style/title"
-        android:textSize="@dimen/textSizeMedium"
-        android:textColor="@color/textColor"
-        android:layout_marginRight="@dimen/bigMargin"
-        android:text="@string/lbl_serve"
-        android:layout_gravity="right"
-        />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-<LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
-<LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
-    <TextView
-        style="@style/title"
-        android:textSize="@dimen/textSizeMedium"
-        android:textColor="@color/textColor"
-        android:layout_marginRight="@dimen/smallMargin"
-        android:text="@string/player1_name"/>
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
 
-    <EditText
-        style="@style/edit_text"
-        android:id="@+id/edt_player1"/>
-
-</LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
         <TextView
             style="@style/title"
-            android:textSize="@dimen/textSizeMedium"
-            android:textColor="@color/textColor"
-            android:layout_marginRight="@dimen/smallMargin"
-            android:text="@string/player2_name"/>
+            android:layout_gravity="center"
+            android:text="@string/label_main_title"
+            android:textAlignment="center"
+            android:textSize="@dimen/textSizeScore" />
 
-        <EditText
-            android:id="@+id/edt_player2"
-            style="@style/edit_text" />
-    </LinearLayout>
-</LinearLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:src="@drawable/tennisracket" />
+
+        <TextView
+            style="@style/title"
+            android:layout_gravity="right"
+            android:layout_marginRight="@dimen/bigMargin"
+            android:text="@string/lbl_serve"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/textSizeMedium" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        style="@style/title"
+                        android:layout_marginRight="@dimen/smallMargin"
+                        android:text="@string/player1_name"
+                        android:textColor="@color/textColor"
+                        android:textSize="@dimen/textSizeMedium" />
+
+                    <EditText
+                        android:id="@+id/edt_player1"
+                        style="@style/edit_text" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        style="@style/title"
+                        android:layout_marginRight="@dimen/smallMargin"
+                        android:text="@string/player2_name"
+                        android:textColor="@color/textColor"
+                        android:textSize="@dimen/textSizeMedium" />
+
+                    <EditText
+                        android:id="@+id/edt_player2"
+                        style="@style/edit_text" />
+                </LinearLayout>
+            </LinearLayout>
 
             <RadioGroup
                 android:layout_width="fill_parent"
                 android:layout_height="match_parent"
-                android:layout_marginRight="@dimen/sideMargin"
                 android:layout_gravity="right"
+                android:layout_marginRight="@dimen/sideMargin"
                 android:orientation="vertical">
-            <RadioButton
-                android:id="@+id/radio_button_serve_pl1"
-                android:layout_width="wrap_content"
-               android:layout_gravity="right"
-                android:layout_height="wrap_content" />
-            <RadioButton
-                android:id="@+id/radio_button_serve_pl2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right" />
+
+                <RadioButton
+                    android:id="@+id/radio_button_serve_pl1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right" />
+
+                <RadioButton
+                    android:id="@+id/radio_button_serve_pl2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right" />
 
             </RadioGroup>
 
+        </LinearLayout>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/title"
+                android:text="@string/lbl_3sets"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/textSizeMedium" />
+
+            <RadioButton
+                android:id="@+id/radio_button_3sets"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/smallPadding" />
+
+            <TextView
+                style="@style/title"
+                android:text="@string/lbl_5sets"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/textSizeMedium" />
+
+            <RadioButton
+                android:id="@+id/radio_button_5sets"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/smallPadding" />
+        </RadioGroup>
+
     </LinearLayout>
 
-<RadioGroup
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal">
-        <TextView
-            style="@style/title"
-            android:textSize="@dimen/textSizeMedium"
-            android:textColor="@color/textColor"
-            android:text="@string/lbl_3sets" />
-        <RadioButton
-            android:id="@+id/radio_button_3sets"
-            android:layout_width="wrap_content"
-            android:paddingTop="@dimen/smallPadding"
-            android:layout_height="wrap_content" />
-        <TextView
-            style="@style/title"
-            android:textSize="@dimen/textSizeMedium"
-            android:textColor="@color/textColor"
-            android:text="@string/lbl_5sets" />
-        <RadioButton
-            android:id="@+id/radio_button_5sets"
-            android:paddingTop="@dimen/smallPadding"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-</RadioGroup>
-
-</LinearLayout>
-
     <Button
-        style= "@style/button"
         android:id="@+id/btn_go_to_match"
-        android:background="@drawable/smallball"
-        android:text="@string/btn_enter_button"
-        android:scaleY="1.5"
-        android:scaleX="1.5"
+        style="@style/button"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/smallball"
+        android:scaleX="1.5"
+        android:scaleY="1.5"
+        android:text="@string/btn_enter_button" />
 </RelativeLayout>

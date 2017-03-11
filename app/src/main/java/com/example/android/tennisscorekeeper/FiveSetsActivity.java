@@ -63,7 +63,7 @@ public class FiveSetsActivity extends AppCompatActivity {
     private ImageView ballPlayer1, ballPlayer2;
     private boolean ball1, ball2;
     private TextView txtSet1Pl1, txtSet2Pl1, txtSet3Pl1, txtSet4Pl1, txtSet5Pl1, txtSet1Pl2, txtSet2Pl2, txtSet3Pl2, txtSet4Pl2, txtSet5Pl2;
-    private CardView cardSet4Pl1, cardSet4Pl2,cardSet5Pl1,cardSet5Pl2,cardPointsPl1,cardPointsPl2;
+    private CardView cardSet4Pl1, cardSet4Pl2, cardSet5Pl1, cardSet5Pl2, cardPointsPl1, cardPointsPl2;
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {               // save variable to temporary variable
@@ -269,40 +269,39 @@ public class FiveSetsActivity extends AppCompatActivity {
 
         ballPlayer1 = (ImageView) findViewById(R.id.ball_player1);
         ballPlayer2 = (ImageView) findViewById(R.id.ball_player2);
-        ball1 =getIntent().getExtras().getBoolean("serve_player_1");
-        ball2 =getIntent().getExtras().getBoolean("serve_player_2");
+        ball1 = getIntent().getExtras().getBoolean("serve_player_1");
+        ball2 = getIntent().getExtras().getBoolean("serve_player_2");
 
         if (ball1) {
             ballPlayer1.setVisibility(View.VISIBLE);
             ballPlayer2.setVisibility(View.INVISIBLE);
-        }
-        else {
+        } else {
             ballPlayer1.setVisibility(View.INVISIBLE);
             ballPlayer2.setVisibility(View.VISIBLE);
         }
 
-         tieSet1Player1 = (TextView) findViewById(R.id.set_1_tie_player1);
-         tieSet2Player1 = (TextView) findViewById(R.id.set_2_tie_player1);
-         tieSet3Player1 = (TextView) findViewById(R.id.set_3_tie_player1);
-         tieSet4Player1 = (TextView) findViewById(R.id.set_4_tie_player1);
-         tieSet5Player1 = (TextView) findViewById(R.id.set_5_tie_player1);
-         tieSet1Player2 = (TextView) findViewById(R.id.set_1_tie_player2);
-         tieSet2Player2 = (TextView) findViewById(R.id.set_2_tie_player2);
-         tieSet3Player2 = (TextView) findViewById(R.id.set_3_tie_player2);
-         tieSet4Player2 = (TextView) findViewById(R.id.set_4_tie_player2);
-         tieSet5Player2 = (TextView) findViewById(R.id.set_5_tie_player2);
+        tieSet1Player1 = (TextView) findViewById(R.id.set_1_tie_player1);
+        tieSet2Player1 = (TextView) findViewById(R.id.set_2_tie_player1);
+        tieSet3Player1 = (TextView) findViewById(R.id.set_3_tie_player1);
+        tieSet4Player1 = (TextView) findViewById(R.id.set_4_tie_player1);
+        tieSet5Player1 = (TextView) findViewById(R.id.set_5_tie_player1);
+        tieSet1Player2 = (TextView) findViewById(R.id.set_1_tie_player2);
+        tieSet2Player2 = (TextView) findViewById(R.id.set_2_tie_player2);
+        tieSet3Player2 = (TextView) findViewById(R.id.set_3_tie_player2);
+        tieSet4Player2 = (TextView) findViewById(R.id.set_4_tie_player2);
+        tieSet5Player2 = (TextView) findViewById(R.id.set_5_tie_player2);
         tieSetsInvisible();
 
-         txtSet1Pl1 = (TextView) findViewById(R.id.set_1_score_player1);
-         txtSet2Pl1 = (TextView) findViewById(R.id.set_2_score_player1);
-         txtSet3Pl1 = (TextView) findViewById(R.id.set_3_score_player1);
-         txtSet4Pl1 = (TextView) findViewById(R.id.set_4_score_player1);
-         txtSet5Pl1 = (TextView) findViewById(R.id.set_5_score_player1);
-         txtSet1Pl2 = (TextView) findViewById(R.id.set_1_score_player2);
-         txtSet2Pl2 = (TextView) findViewById(R.id.set_2_score_player2);
-         txtSet3Pl2 = (TextView) findViewById(R.id.set_3_score_player2);
-         txtSet4Pl2 = (TextView) findViewById(R.id.set_4_score_player2);
-         txtSet5Pl2 = (TextView) findViewById(R.id.set_5_score_player2);
+        txtSet1Pl1 = (TextView) findViewById(R.id.set_1_score_player1);
+        txtSet2Pl1 = (TextView) findViewById(R.id.set_2_score_player1);
+        txtSet3Pl1 = (TextView) findViewById(R.id.set_3_score_player1);
+        txtSet4Pl1 = (TextView) findViewById(R.id.set_4_score_player1);
+        txtSet5Pl1 = (TextView) findViewById(R.id.set_5_score_player1);
+        txtSet1Pl2 = (TextView) findViewById(R.id.set_1_score_player2);
+        txtSet2Pl2 = (TextView) findViewById(R.id.set_2_score_player2);
+        txtSet3Pl2 = (TextView) findViewById(R.id.set_3_score_player2);
+        txtSet4Pl2 = (TextView) findViewById(R.id.set_4_score_player2);
+        txtSet5Pl2 = (TextView) findViewById(R.id.set_5_score_player2);
         cardSet4Pl1 = (CardView) findViewById(R.id.card_4_set_player1);
         cardSet5Pl1 = (CardView) findViewById(R.id.card_5_set_player1);
         cardSet4Pl2 = (CardView) findViewById(R.id.card_4_set_player2);
@@ -311,7 +310,7 @@ public class FiveSetsActivity extends AppCompatActivity {
         cardPointsPl2 = (CardView) findViewById(R.id.card_point_player2);
 
 
-        Button goToMainMenu = (Button)findViewById(R.id.btn_go_to_main_menu);
+        Button goToMainMenu = (Button) findViewById(R.id.btn_go_to_main_menu);
         goToMainMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -319,7 +318,7 @@ public class FiveSetsActivity extends AppCompatActivity {
                 startActivity(backToMainMenu);
             }
         });
-        Button goToStats = (Button)findViewById(R.id.btn_go_to_stats);
+        Button goToStats = (Button) findViewById(R.id.btn_go_to_stats);
         goToStats.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -335,7 +334,7 @@ public class FiveSetsActivity extends AppCompatActivity {
                 statsIntent.putExtra("name_player1", pl1);
                 statsIntent.putExtra("name_player2", pl2);
                 startActivity(statsIntent);
-                }
+            }
 
         });
     }
@@ -359,44 +358,40 @@ public class FiveSetsActivity extends AppCompatActivity {
             txtPl2.setText(tx2);
         }
     }*/
+
     /**
      * Add points methods
      */
     public void addFifteenForPlayer1(View view) {
         if ((scorePlayer1Set1 == 6 & scorePlayer2Set1 == 6) | (scorePlayer1Set2 == 6 & scorePlayer2Set2 == 6) | (scorePlayer1Set3 == 6 & scorePlayer2Set3 == 6)
-            | (scorePlayer1Set4 == 6 & scorePlayer2Set4 == 6) | (scorePlayer1Set5 == 6 & scorePlayer2Set5 == 6)) {
+                | (scorePlayer1Set4 == 6 & scorePlayer2Set4 == 6) | (scorePlayer1Set5 == 6 & scorePlayer2Set5 == 6)) {
             tiePlayer1();
             game();
-        }
-        else if (scorePlayer1 < 30) {
+        } else if (scorePlayer1 < 30) {
             scorePlayer1 = scorePlayer1 + 15;
-        gamePointsVisible();
+            gamePointsVisible();
             displayForPlayer1(scorePlayer1);
-        }
-        else if (scorePlayer1 == 40 & scorePlayer2 == 40 & Advantage1.equals("") & Advantage2.equals("") ) {
+        } else if (scorePlayer1 == 40 & scorePlayer2 == 40 & Advantage1.equals("") & Advantage2.equals("")) {
             Advantage1 = "AD";
             Advantage2 = "";
             advantageVisible();
             displayAdvantage1(Advantage1);
             displayAdvantage2(Advantage2);
-        }
-        else if (Advantage2.equals("AD")){
-             scorePlayer1 = 40;
+        } else if (Advantage2.equals("AD")) {
+            scorePlayer1 = 40;
             scorePlayer2 = 40;
             Advantage1 = "";
             Advantage2 = "";
             gamePointsVisible();
             displayForPlayer1(scorePlayer1);
             displayForPlayer2(scorePlayer2);
-        }
-            else if (Advantage1.equals("AD") | (scorePlayer1 == 40 && scorePlayer2 != 40)){
+        } else if (Advantage1.equals("AD") | (scorePlayer1 == 40 && scorePlayer2 != 40)) {
             game();
-            }
-         else {
+        } else {
             scorePlayer1 = 40;
             displayForPlayer1(scorePlayer1);
         }
-pointsWonPlayer1 = pointsWonPlayer1 + 1;
+        pointsWonPlayer1 = pointsWonPlayer1 + 1;
     }
 
     public void addFifteenForPlayer2(View view) {
@@ -404,20 +399,17 @@ pointsWonPlayer1 = pointsWonPlayer1 + 1;
                 | (scorePlayer1Set4 == 6 & scorePlayer2Set4 == 6) | (scorePlayer1Set5 == 6 & scorePlayer2Set5 == 6)) {
             tiePlayer2();
             game();
-        }
-        else if (scorePlayer2 < 30) {
+        } else if (scorePlayer2 < 30) {
             scorePlayer2 = scorePlayer2 + 15;
             displayForPlayer2(scorePlayer2);
-           gamePointsVisible();
-        }
-        else if (scorePlayer1 == 40 & scorePlayer2 == 40 & Advantage1.equals("") & Advantage2.equals("") ) {
+            gamePointsVisible();
+        } else if (scorePlayer1 == 40 & scorePlayer2 == 40 & Advantage1.equals("") & Advantage2.equals("")) {
             Advantage2 = "AD";
             Advantage1 = "";
             advantageVisible();
             displayAdvantage1(Advantage1);
             displayAdvantage2(Advantage2);
-        }
-        else if (Advantage1.equals("AD")){
+        } else if (Advantage1.equals("AD")) {
             scorePlayer1 = 40;
             scorePlayer2 = 40;
             Advantage1 = "";
@@ -425,40 +417,45 @@ pointsWonPlayer1 = pointsWonPlayer1 + 1;
             gamePointsVisible();
             displayForPlayer1(scorePlayer1);
             displayForPlayer2(scorePlayer2);
-        }
-        else if (Advantage2.equals("AD") | (scorePlayer2 == 40 && scorePlayer1 != 40) ){
+        } else if (Advantage2.equals("AD") | (scorePlayer2 == 40 && scorePlayer1 != 40)) {
             game();
-        }
-        else {
+        } else {
             scorePlayer2 = 40;
             displayForPlayer2(scorePlayer2);
         }
         pointsWonPlayer2 = pointsWonPlayer2 + 1;
     }
-    public void aceForPlayer1(View v){
+
+    public void aceForPlayer1(View v) {
         acePlayer1 = acePlayer1 + 1;
         addFifteenForPlayer1(v);
     }
-    public void aceForPlayer2(View v){
+
+    public void aceForPlayer2(View v) {
         acePlayer2 = acePlayer2 + 1;
         addFifteenForPlayer2(v);
     }
-    public void winnerPlayer1(View v){
+
+    public void winnerPlayer1(View v) {
         winPlayer1 = winPlayer1 + 1;
         addFifteenForPlayer1(v);
     }
-    public void winnerPlayer2(View v){
+
+    public void winnerPlayer2(View v) {
         winPlayer2 = winPlayer2 + 1;
         addFifteenForPlayer2(v);
     }
-    public void errorPlayer1(View v){
+
+    public void errorPlayer1(View v) {
         errPlayer1 = errPlayer1 + 1;
         addFifteenForPlayer2(v);
     }
-    public void errorPlayer2(View v){
+
+    public void errorPlayer2(View v) {
         errPlayer2 = errPlayer2 + 1;
         addFifteenForPlayer1(v);
     }
+
     /**
      * Tie break methods
      */
@@ -485,24 +482,22 @@ pointsWonPlayer1 = pointsWonPlayer1 + 1;
 
     }
 
-    public void tieBreakCalculation(){
+    public void tieBreakCalculation() {
         if ((scorePlayer1Set1 == 6 & scorePlayer2Set1 == 6)) {
             player1TieSet1 = tie1;
             player2TieSet1 = tie2;
-        }
-        else if ((scorePlayer1Set1 == 7 & scorePlayer2Set1 == 6) | (scorePlayer1Set1 == 6 & scorePlayer2Set1 == 7) && (scorePlayer1Set2 != 6 & scorePlayer2Set2 !=  6)){
-                tieSet1Player1.setVisibility(View.VISIBLE);
-                tieSet1Player2.setVisibility(View.VISIBLE);
-                displayTiePlayer1Set1(player1TieSet1);
-                displayTiePlayer2Set1(player2TieSet1);
+        } else if ((scorePlayer1Set1 == 7 & scorePlayer2Set1 == 6) | (scorePlayer1Set1 == 6 & scorePlayer2Set1 == 7) && (scorePlayer1Set2 != 6 & scorePlayer2Set2 != 6)) {
+            tieSet1Player1.setVisibility(View.VISIBLE);
+            tieSet1Player2.setVisibility(View.VISIBLE);
+            displayTiePlayer1Set1(player1TieSet1);
+            displayTiePlayer2Set1(player2TieSet1);
             tie1 = 0;
             tie2 = 0;
-            }
+        }
         if ((scorePlayer1Set2 == 6 & scorePlayer2Set2 == 6)) {
             player1TieSet2 = tie1;
             player2TieSet2 = tie2;
-        }
-        else if ((scorePlayer1Set2 == 7 & scorePlayer2Set2 == 6) | (scorePlayer1Set2 == 6 & scorePlayer2Set2 == 7) && (scorePlayer1Set3 != 6 & scorePlayer2Set3 !=  6)){
+        } else if ((scorePlayer1Set2 == 7 & scorePlayer2Set2 == 6) | (scorePlayer1Set2 == 6 & scorePlayer2Set2 == 7) && (scorePlayer1Set3 != 6 & scorePlayer2Set3 != 6)) {
             tieSet2Player1.setVisibility(View.VISIBLE);
             tieSet2Player2.setVisibility(View.VISIBLE);
             displayTiePlayer1Set2(player1TieSet2);
@@ -513,8 +508,7 @@ pointsWonPlayer1 = pointsWonPlayer1 + 1;
         if (scorePlayer1Set3 == 6 & scorePlayer2Set3 == 6) {
             player1TieSet3 = tie1;
             player2TieSet3 = tie2;
-        }
-        else if ((scorePlayer1Set3 == 7 & scorePlayer2Set3 == 6) | (scorePlayer1Set3 == 6 & scorePlayer2Set3 == 7) && (scorePlayer1Set4 != 6 & scorePlayer2Set4 !=  6)){
+        } else if ((scorePlayer1Set3 == 7 & scorePlayer2Set3 == 6) | (scorePlayer1Set3 == 6 & scorePlayer2Set3 == 7) && (scorePlayer1Set4 != 6 & scorePlayer2Set4 != 6)) {
             tieSet3Player1.setVisibility(View.VISIBLE);
             tieSet3Player2.setVisibility(View.VISIBLE);
             displayTiePlayer1Set3(player1TieSet3);
@@ -525,8 +519,7 @@ pointsWonPlayer1 = pointsWonPlayer1 + 1;
         if ((scorePlayer1Set4 == 6 & scorePlayer2Set4 == 6)) {
             player1TieSet4 = tie1;
             player2TieSet4 = tie2;
-        }
-        else if ((scorePlayer1Set4 == 7 & scorePlayer2Set4 == 6) | (scorePlayer1Set4 == 6 & scorePlayer2Set4 == 7) && (scorePlayer1Set5 != 6 & scorePlayer2Set5 !=  6)){
+        } else if ((scorePlayer1Set4 == 7 & scorePlayer2Set4 == 6) | (scorePlayer1Set4 == 6 & scorePlayer2Set4 == 7) && (scorePlayer1Set5 != 6 & scorePlayer2Set5 != 6)) {
             tieSet4Player1.setVisibility(View.VISIBLE);
             tieSet4Player2.setVisibility(View.VISIBLE);
             displayTiePlayer1Set4(player1TieSet4);
@@ -537,8 +530,7 @@ pointsWonPlayer1 = pointsWonPlayer1 + 1;
         if ((scorePlayer1Set5 == 6 & scorePlayer2Set5 == 6)) {
             player1TieSet5 = tie1;
             player2TieSet5 = tie2;
-        }
-        else if ((scorePlayer1Set5 == 7 & scorePlayer2Set5 == 6) | (scorePlayer1Set5 == 6 & scorePlayer2Set5 == 7)){
+        } else if ((scorePlayer1Set5 == 7 & scorePlayer2Set5 == 6) | (scorePlayer1Set5 == 6 & scorePlayer2Set5 == 7)) {
             tieSet5Player1.setVisibility(View.VISIBLE);
             tieSet5Player2.setVisibility(View.VISIBLE);
             displayTiePlayer1Set5(player1TieSet5);
@@ -547,6 +539,7 @@ pointsWonPlayer1 = pointsWonPlayer1 + 1;
             tie2 = 0;
         }
     }
+
     /**
      * This method resets the score in the game
      */
@@ -586,22 +579,22 @@ pointsWonPlayer1 = pointsWonPlayer1 + 1;
         displayTiePlayer2Set4(player2TieSet4);
         displayTiePlayer2Set5(player2TieSet5);
     }
+
     /**
      * These methods check which player won the current game and add a point to the set
      */
 
-    public void comparePointsSet1(){
-        if ((scorePlayer1 > scorePlayer2 & scorePlayer1 == 40) | Advantage1.equals("AD") | (tie1 > 6 && (tie1 - tie2 > 1) )) {
+    public void comparePointsSet1() {
+        if ((scorePlayer1 > scorePlayer2 & scorePlayer1 == 40) | Advantage1.equals("AD") | (tie1 > 6 && (tie1 - tie2 > 1))) {
             scorePlayer1Set1 = scorePlayer1Set1 + 1;
             resetGame();
-        } else if ((scorePlayer2 > scorePlayer1 & scorePlayer2 == 40)| Advantage2.equals("AD") | (tie2 > 6 && (tie2 - tie1 > 1) )) {
+        } else if ((scorePlayer2 > scorePlayer1 & scorePlayer2 == 40) | Advantage2.equals("AD") | (tie2 > 6 && (tie2 - tie1 > 1))) {
             scorePlayer2Set1 = scorePlayer2Set1 + 1;
             resetGame();
         }
-        if ((scorePlayer1Set1 > scorePlayer2Set1) && ((scorePlayer1Set1 >= 6 & scorePlayer2Set1 < 5) | (scorePlayer1Set1 ==7 & scorePlayer2Set1 >= 5))){
+        if ((scorePlayer1Set1 > scorePlayer2Set1) && ((scorePlayer1Set1 >= 6 & scorePlayer2Set1 < 5) | (scorePlayer1Set1 == 7 & scorePlayer2Set1 >= 5))) {
             setsWonPlayer1 = setsWonPlayer1 + 1;
-        }
-        else if ((scorePlayer2Set1 > scorePlayer1Set1) && ((scorePlayer2Set1 >= 6 & scorePlayer1Set1 < 5) | (scorePlayer2Set1 ==7 & scorePlayer1Set1 >= 5))) {
+        } else if ((scorePlayer2Set1 > scorePlayer1Set1) && ((scorePlayer2Set1 >= 6 & scorePlayer1Set1 < 5) | (scorePlayer2Set1 == 7 & scorePlayer1Set1 >= 5))) {
             setsWonPlayer2 = setsWonPlayer2 + 1;
         }
         System.out.println(scorePlayer1Set1);
@@ -609,18 +602,18 @@ pointsWonPlayer1 = pointsWonPlayer1 + 1;
         System.out.println(setsWonPlayer1);
         System.out.println(setsWonPlayer2);
     }
-    public void comparePointsSet2(){
-        if ((scorePlayer1 > scorePlayer2 & scorePlayer1 == 40) | Advantage1.equals("AD") | (tie1 > 6 && (tie1 - tie2 > 1) )) {
+
+    public void comparePointsSet2() {
+        if ((scorePlayer1 > scorePlayer2 & scorePlayer1 == 40) | Advantage1.equals("AD") | (tie1 > 6 && (tie1 - tie2 > 1))) {
             scorePlayer1Set2 = scorePlayer1Set2 + 1;
             resetGame();
-        } else if ((scorePlayer2 > scorePlayer1 & scorePlayer2 == 40)| Advantage2.equals("AD") | (tie2 > 6 && (tie2 - tie1 > 1) )) {
+        } else if ((scorePlayer2 > scorePlayer1 & scorePlayer2 == 40) | Advantage2.equals("AD") | (tie2 > 6 && (tie2 - tie1 > 1))) {
             scorePlayer2Set2 = scorePlayer2Set2 + 1;
             resetGame();
         }
-        if ((scorePlayer1Set2 > scorePlayer2Set2) && ((scorePlayer1Set2 >= 6 & scorePlayer2Set2 < 5) | (scorePlayer1Set2 ==7 & scorePlayer2Set2 >= 5))){
+        if ((scorePlayer1Set2 > scorePlayer2Set2) && ((scorePlayer1Set2 >= 6 & scorePlayer2Set2 < 5) | (scorePlayer1Set2 == 7 & scorePlayer2Set2 >= 5))) {
             setsWonPlayer1 = setsWonPlayer1 + 1;
-        }
-        else if ((scorePlayer2Set2 > scorePlayer1Set2) && ((scorePlayer2Set2 >= 6 & scorePlayer1Set2 < 5) | (scorePlayer2Set2 ==7 & scorePlayer1Set2 >= 5))) {
+        } else if ((scorePlayer2Set2 > scorePlayer1Set2) && ((scorePlayer2Set2 >= 6 & scorePlayer1Set2 < 5) | (scorePlayer2Set2 == 7 & scorePlayer1Set2 >= 5))) {
             setsWonPlayer2 = setsWonPlayer2 + 1;
         }
         System.out.println(scorePlayer1Set2);
@@ -628,25 +621,25 @@ pointsWonPlayer1 = pointsWonPlayer1 + 1;
         System.out.println(setsWonPlayer1);
         System.out.println(setsWonPlayer2);
     }
-    public void comparePointsSet3(){
-        if ((scorePlayer1 > scorePlayer2 & scorePlayer1 == 40) | Advantage1.equals("AD") | (tie1 > 6 && (tie1 - tie2 > 1) )) {
+
+    public void comparePointsSet3() {
+        if ((scorePlayer1 > scorePlayer2 & scorePlayer1 == 40) | Advantage1.equals("AD") | (tie1 > 6 && (tie1 - tie2 > 1))) {
             scorePlayer1Set3 = scorePlayer1Set3 + 1;
             resetGame();
-        } else if ((scorePlayer2 > scorePlayer1 & scorePlayer2 == 40)| Advantage2.equals("AD") | (tie2 > 6 && (tie2 - tie1 > 1) )) {
+        } else if ((scorePlayer2 > scorePlayer1 & scorePlayer2 == 40) | Advantage2.equals("AD") | (tie2 > 6 && (tie2 - tie1 > 1))) {
             scorePlayer2Set3 = scorePlayer2Set3 + 1;
             resetGame();
         }
-        if ((scorePlayer1Set3 > scorePlayer2Set3) && ((scorePlayer1Set3 >= 6 & scorePlayer2Set3 < 5) | (scorePlayer1Set3 ==7 & scorePlayer2Set3 >= 5))){
+        if ((scorePlayer1Set3 > scorePlayer2Set3) && ((scorePlayer1Set3 >= 6 & scorePlayer2Set3 < 5) | (scorePlayer1Set3 == 7 & scorePlayer2Set3 >= 5))) {
             setsWonPlayer1 = setsWonPlayer1 + 1;
-        }
-        else if ((scorePlayer2Set3 > scorePlayer1Set3) && (scorePlayer2Set3 >= 6 & scorePlayer1Set3 < 5) | (scorePlayer2Set3 ==7 & scorePlayer1Set3 >= 5)) {
+        } else if ((scorePlayer2Set3 > scorePlayer1Set3) && (scorePlayer2Set3 >= 6 & scorePlayer1Set3 < 5) | (scorePlayer2Set3 == 7 & scorePlayer1Set3 >= 5)) {
             setsWonPlayer2 = setsWonPlayer2 + 1;
         }
         System.out.println(scorePlayer1Set3);
         System.out.println(scorePlayer2Set3);
         System.out.println(setsWonPlayer1);
         System.out.println(setsWonPlayer2);
-        if (setsWonPlayer1 == 3){
+        if (setsWonPlayer1 == 3) {
             Toast.makeText(this, pl1 + "  won the match!", Toast.LENGTH_LONG).show();
             cardSet4Pl1.setVisibility(View.INVISIBLE);
             cardSet4Pl2.setVisibility(View.INVISIBLE);
@@ -656,8 +649,7 @@ pointsWonPlayer1 = pointsWonPlayer1 + 1;
             cardPointsPl2.setVisibility(View.INVISIBLE);
             ballPlayer1.setVisibility(View.INVISIBLE);
             ballPlayer2.setVisibility(View.INVISIBLE);
-        }
-        else if (setsWonPlayer2 == 3){
+        } else if (setsWonPlayer2 == 3) {
             Toast.makeText(this, pl2 + "  won the match!", Toast.LENGTH_LONG).show();
             cardSet4Pl1.setVisibility(View.INVISIBLE);
             cardSet4Pl2.setVisibility(View.INVISIBLE);
@@ -669,21 +661,21 @@ pointsWonPlayer1 = pointsWonPlayer1 + 1;
             ballPlayer2.setVisibility(View.INVISIBLE);
         }
     }
-    public void comparePointsSet4(){
-        if ((scorePlayer1 > scorePlayer2 & scorePlayer1 == 40) | Advantage1.equals("AD") | (tie1 > 6 && (tie1 - tie2 > 1) )) {
+
+    public void comparePointsSet4() {
+        if ((scorePlayer1 > scorePlayer2 & scorePlayer1 == 40) | Advantage1.equals("AD") | (tie1 > 6 && (tie1 - tie2 > 1))) {
             scorePlayer1Set4 = scorePlayer1Set4 + 1;
             resetGame();
-        } else if ((scorePlayer2 > scorePlayer1 & scorePlayer2 == 40)| Advantage2.equals("AD") | (tie2 > 6 && (tie2 - tie1 > 1) )) {
+        } else if ((scorePlayer2 > scorePlayer1 & scorePlayer2 == 40) | Advantage2.equals("AD") | (tie2 > 6 && (tie2 - tie1 > 1))) {
             scorePlayer2Set4 = scorePlayer2Set4 + 1;
             resetGame();
         }
-        if ((scorePlayer1Set4 > scorePlayer2Set4) && ((scorePlayer1Set4 >= 6 & scorePlayer2Set4 < 5) | (scorePlayer1Set4 == 7 & scorePlayer2Set4 >= 5))){
+        if ((scorePlayer1Set4 > scorePlayer2Set4) && ((scorePlayer1Set4 >= 6 & scorePlayer2Set4 < 5) | (scorePlayer1Set4 == 7 & scorePlayer2Set4 >= 5))) {
             setsWonPlayer1 = setsWonPlayer1 + 1;
-        }
-        else if ((scorePlayer2Set4 > scorePlayer1Set4) && ((scorePlayer2Set4 >= 6 & scorePlayer1Set4 < 5) | (scorePlayer2Set4 == 7 & scorePlayer1Set4 >= 5))) {
+        } else if ((scorePlayer2Set4 > scorePlayer1Set4) && ((scorePlayer2Set4 >= 6 & scorePlayer1Set4 < 5) | (scorePlayer2Set4 == 7 & scorePlayer1Set4 >= 5))) {
             setsWonPlayer2 = setsWonPlayer2 + 1;
         }
-        if (setsWonPlayer1 == 3){
+        if (setsWonPlayer1 == 3) {
             Toast.makeText(this, pl1 + "  won the match!", Toast.LENGTH_LONG).show();
             cardSet5Pl1.setVisibility(View.INVISIBLE);
             cardSet5Pl2.setVisibility(View.INVISIBLE);
@@ -691,8 +683,7 @@ pointsWonPlayer1 = pointsWonPlayer1 + 1;
             cardPointsPl2.setVisibility(View.INVISIBLE);
             ballPlayer1.setVisibility(View.INVISIBLE);
             ballPlayer2.setVisibility(View.INVISIBLE);
-        }
-        else if (setsWonPlayer2 == 3){
+        } else if (setsWonPlayer2 == 3) {
             Toast.makeText(this, pl2 + "  won the match!", Toast.LENGTH_LONG).show();
             cardSet5Pl1.setVisibility(View.INVISIBLE);
             cardSet5Pl2.setVisibility(View.INVISIBLE);
@@ -702,28 +693,27 @@ pointsWonPlayer1 = pointsWonPlayer1 + 1;
             ballPlayer2.setVisibility(View.INVISIBLE);
         }
     }
-    public void comparePointsSet5(){
-        if ((scorePlayer1 > scorePlayer2 & scorePlayer1 == 40) | Advantage1.equals("AD") | (tie1 > 6 && (tie1 - tie2 > 1) )) {
+
+    public void comparePointsSet5() {
+        if ((scorePlayer1 > scorePlayer2 & scorePlayer1 == 40) | Advantage1.equals("AD") | (tie1 > 6 && (tie1 - tie2 > 1))) {
             scorePlayer1Set5 = scorePlayer1Set5 + 1;
             resetGame();
-        } else if ((scorePlayer2 > scorePlayer1 & scorePlayer2 == 40)| Advantage2.equals("AD") | (tie2 > 6 && (tie2 - tie1 > 1) )) {
+        } else if ((scorePlayer2 > scorePlayer1 & scorePlayer2 == 40) | Advantage2.equals("AD") | (tie2 > 6 && (tie2 - tie1 > 1))) {
             scorePlayer2Set5 = scorePlayer2Set5 + 1;
             resetGame();
         }
-        if ((scorePlayer1Set5 > scorePlayer2Set5) && ((scorePlayer1Set5 >= 6 & scorePlayer2Set5 < 5) | (scorePlayer1Set5 == 7 & scorePlayer2Set5 >= 5))){
+        if ((scorePlayer1Set5 > scorePlayer2Set5) && ((scorePlayer1Set5 >= 6 & scorePlayer2Set5 < 5) | (scorePlayer1Set5 == 7 & scorePlayer2Set5 >= 5))) {
             setsWonPlayer1 = setsWonPlayer1 + 1;
-        }
-        else if ((scorePlayer2Set5 > scorePlayer1Set5) && ((scorePlayer2Set5 >= 6 & scorePlayer1Set5 < 5) | (scorePlayer2Set5 ==7 & scorePlayer1Set5 >=5))) {
+        } else if ((scorePlayer2Set5 > scorePlayer1Set5) && ((scorePlayer2Set5 >= 6 & scorePlayer1Set5 < 5) | (scorePlayer2Set5 == 7 & scorePlayer1Set5 >= 5))) {
             setsWonPlayer2 = setsWonPlayer2 + 1;
         }
-        if (setsWonPlayer1 == 3){
+        if (setsWonPlayer1 == 3) {
             Toast.makeText(this, pl1 + "  won the match!", Toast.LENGTH_LONG).show();
             cardPointsPl1.setVisibility(View.INVISIBLE);
             cardPointsPl2.setVisibility(View.INVISIBLE);
             ballPlayer1.setVisibility(View.INVISIBLE);
             ballPlayer2.setVisibility(View.INVISIBLE);
-        }
-        else if (setsWonPlayer2 == 3){
+        } else if (setsWonPlayer2 == 3) {
             Toast.makeText(this, pl2 + "  won the match!", Toast.LENGTH_LONG).show();
             cardPointsPl1.setVisibility(View.INVISIBLE);
             cardPointsPl2.setVisibility(View.INVISIBLE);
@@ -742,14 +732,12 @@ pointsWonPlayer1 = pointsWonPlayer1 + 1;
             displayGamesPlayer1Set1(scorePlayer1Set1);
             displayGamesPlayer2Set1(scorePlayer2Set1);
 
-        }
-        else if ((scorePlayer1Set1 >= 6 | scorePlayer2Set1 >= 6) & (scorePlayer1Set2 < 6 & scorePlayer2Set2 < 6) | (scorePlayer1Set2 == 6 & scorePlayer2Set2 == 5)
+        } else if ((scorePlayer1Set1 >= 6 | scorePlayer2Set1 >= 6) & (scorePlayer1Set2 < 6 & scorePlayer2Set2 < 6) | (scorePlayer1Set2 == 6 & scorePlayer2Set2 == 5)
                 | (scorePlayer1Set2 == 5 & scorePlayer2Set2 == 6) | (scorePlayer1Set2 == 6 & scorePlayer2Set2 == 6) & scorePlayer1Set3 == 0 & scorePlayer2Set3 == 0) {
             comparePointsSet2();
             displayGamesPlayer1Set2(scorePlayer1Set2);
             displayGamesPlayer2Set2(scorePlayer2Set2);
-        }
-        else if ((scorePlayer1Set2 >= 6 | scorePlayer2Set2 >= 6) & (scorePlayer1Set3 < 6 & scorePlayer2Set3 < 6) | (scorePlayer1Set3 == 6 & scorePlayer2Set3 == 5)
+        } else if ((scorePlayer1Set2 >= 6 | scorePlayer2Set2 >= 6) & (scorePlayer1Set3 < 6 & scorePlayer2Set3 < 6) | (scorePlayer1Set3 == 6 & scorePlayer2Set3 == 5)
                 | (scorePlayer1Set3 == 5 & scorePlayer2Set3 == 6) | (scorePlayer1Set3 == 6 & scorePlayer2Set3 == 6) & scorePlayer1Set4 == 0 & scorePlayer2Set4 == 0) {
             comparePointsSet3();
             displayGamesPlayer1Set3(scorePlayer1Set3);
@@ -772,7 +760,7 @@ pointsWonPlayer1 = pointsWonPlayer1 + 1;
      * Method ballPlayer change the ball to the player who is serving
      */
 
-    public void tieBreakVisible(){
+    public void tieBreakVisible() {
         invADvPlayer1.setVisibility(View.INVISIBLE);
         invAdvPlayer2.setVisibility(View.INVISIBLE);
         invPlayer1.setVisibility(View.INVISIBLE);
@@ -781,6 +769,7 @@ pointsWonPlayer1 = pointsWonPlayer1 + 1;
         invTiePlayer2.setVisibility(View.VISIBLE);
 
     }
+
     public void gamePointsVisible() {
         invADvPlayer1.setVisibility(View.INVISIBLE);
         invAdvPlayer2.setVisibility(View.INVISIBLE);
@@ -798,8 +787,9 @@ pointsWonPlayer1 = pointsWonPlayer1 + 1;
         invTiePlayer1.setVisibility(View.INVISIBLE);
         invTiePlayer2.setVisibility(View.INVISIBLE);
     }
+
     public void tieSetsInvisible() {
- tieSet1Player1.setVisibility(View.INVISIBLE);
+        tieSet1Player1.setVisibility(View.INVISIBLE);
         tieSet2Player1.setVisibility(View.INVISIBLE);
         tieSet3Player1.setVisibility(View.INVISIBLE);
         tieSet4Player1.setVisibility(View.INVISIBLE);
@@ -810,6 +800,7 @@ pointsWonPlayer1 = pointsWonPlayer1 + 1;
         tieSet4Player2.setVisibility(View.INVISIBLE);
         tieSet5Player2.setVisibility(View.INVISIBLE);
     }
+
     public void setsVisibles() {
         cardSet4Pl1.setVisibility(View.VISIBLE);
         cardSet4Pl2.setVisibility(View.VISIBLE);
@@ -818,21 +809,22 @@ pointsWonPlayer1 = pointsWonPlayer1 + 1;
         cardPointsPl1.setVisibility(View.VISIBLE);
         cardPointsPl2.setVisibility(View.VISIBLE);
     }
-public void ballPlayer(){
-    if (ball1) {
-        ballPlayer1.setVisibility(View.INVISIBLE);
-        ballPlayer2.setVisibility(View.VISIBLE);
-        ball2 = true;
-        ball1 = false;
-    }
-    else if (ball2){
-        ballPlayer1.setVisibility(View.VISIBLE);
-        ballPlayer2.setVisibility(View.INVISIBLE);
-        ball2 = false;
-        ball1 = true;
+
+    public void ballPlayer() {
+        if (ball1) {
+            ballPlayer1.setVisibility(View.INVISIBLE);
+            ballPlayer2.setVisibility(View.VISIBLE);
+            ball2 = true;
+            ball1 = false;
+        } else if (ball2) {
+            ballPlayer1.setVisibility(View.VISIBLE);
+            ballPlayer2.setVisibility(View.INVISIBLE);
+            ball2 = false;
+            ball1 = true;
+        }
+
     }
 
-}
     /**
      * Displays methods
      */
@@ -840,97 +832,123 @@ public void ballPlayer(){
         TextView scoreView = (TextView) findViewById(player_1_score);
         scoreView.setText(String.valueOf(score));
     }
+
     public void displayTiePlayer1(int score) {
         TextView scoreView = (TextView) findViewById(player_1_score_tie);
         scoreView.setText(String.valueOf(score));
     }
+
     public void displayAdvantage1(String Adv) {
         TextView scoreView = (TextView) findViewById(R.id.advantage1);
         scoreView.setText(String.valueOf(Adv));
     }
+
     public void displayForPlayer2(int score) {
         TextView scoreView = (TextView) findViewById(R.id.player_2_score);
         scoreView.setText(String.valueOf(score));
     }
+
     public void displayTiePlayer2(int score) {
         TextView scoreView = (TextView) findViewById(player_2_score_tie);
         scoreView.setText(String.valueOf(score));
     }
+
     public void displayAdvantage2(String Adv) {
         TextView scoreView = (TextView) findViewById(R.id.advantage2);
         scoreView.setText(String.valueOf(Adv));
     }
+
     public void displayGamesPlayer1Set1(int score) {
         TextView scoreView = (TextView) findViewById(R.id.set_1_score_player1);
         scoreView.setText(String.valueOf(score));
     }
+
     public void displayGamesPlayer1Set2(int score) {
         TextView scoreView = (TextView) findViewById(R.id.set_2_score_player1);
         scoreView.setText(String.valueOf(score));
     }
+
     public void displayGamesPlayer1Set3(int score) {
         TextView scoreView = (TextView) findViewById(R.id.set_3_score_player1);
         scoreView.setText(String.valueOf(score));
     }
+
     public void displayGamesPlayer1Set4(int score) {
         TextView scoreView = (TextView) findViewById(R.id.set_4_score_player1);
         scoreView.setText(String.valueOf(score));
     }
+
     public void displayGamesPlayer1Set5(int score) {
         TextView scoreView = (TextView) findViewById(R.id.set_5_score_player1);
         scoreView.setText(String.valueOf(score));
     }
+
     public void displayGamesPlayer2Set1(int score) {
         TextView scoreView = (TextView) findViewById(R.id.set_1_score_player2);
         scoreView.setText(String.valueOf(score));
     }
+
     public void displayGamesPlayer2Set2(int score) {
         TextView scoreView = (TextView) findViewById(R.id.set_2_score_player2);
         scoreView.setText(String.valueOf(score));
     }
+
     public void displayGamesPlayer2Set3(int score) {
         TextView scoreView = (TextView) findViewById(R.id.set_3_score_player2);
         scoreView.setText(String.valueOf(score));
     }
+
     public void displayGamesPlayer2Set4(int score) {
         TextView scoreView = (TextView) findViewById(R.id.set_4_score_player2);
         scoreView.setText(String.valueOf(score));
     }
+
     public void displayGamesPlayer2Set5(int score) {
         TextView scoreView = (TextView) findViewById(R.id.set_5_score_player2);
         scoreView.setText(String.valueOf(score));
     }
+
     public void displayTiePlayer1Set1(int score) {
         tieSet1Player1.setText(String.valueOf(score));
     }
+
     public void displayTiePlayer1Set2(int score) {
         tieSet2Player1.setText(String.valueOf(score));
     }
+
     public void displayTiePlayer1Set3(int score) {
         tieSet3Player1.setText(String.valueOf(score));
     }
+
     public void displayTiePlayer1Set4(int score) {
         tieSet4Player1.setText(String.valueOf(score));
     }
+
     public void displayTiePlayer1Set5(int score) {
         tieSet5Player1.setText(String.valueOf(score));
     }
+
     public void displayTiePlayer2Set1(int score) {
         tieSet1Player2.setText(String.valueOf(score));
     }
+
     public void displayTiePlayer2Set2(int score) {
         tieSet2Player2.setText(String.valueOf(score));
     }
+
     public void displayTiePlayer2Set3(int score) {
         tieSet3Player2.setText(String.valueOf(score));
     }
+
     public void displayTiePlayer2Set4(int score) {
         tieSet4Player2.setText(String.valueOf(score));
     }
+
     public void displayTiePlayer2Set5(int score) {
         tieSet5Player2.setText(String.valueOf(score));
     }
-        /**
+
+    /**
      * Resets all score
      */
     public void resetAll(View view) {
@@ -987,9 +1005,6 @@ public void ballPlayer(){
         tieSetsInvisible();
         setsVisibles();
     }
-
-
-
 
 
 }

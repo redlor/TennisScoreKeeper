@@ -46,7 +46,7 @@ public class MenuActivity extends AppCompatActivity {
         servePlayer1 = (RadioButton) findViewById(R.id.radio_button_serve_pl1);
         servePlayer2 = (RadioButton) findViewById(R.id.radio_button_serve_pl2);
 
-        Button goToMatch = (Button)findViewById(R.id.btn_go_to_match);
+        Button goToMatch = (Button) findViewById(R.id.btn_go_to_match);
         goToMatch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,8 +64,7 @@ public class MenuActivity extends AppCompatActivity {
                     servePlayer1.setChecked(true);
                     match5Intent.putExtra("serve_player_1", servePlayer);
                     match3Intent.putExtra("serve_player_1", servePlayer);
-                }
-                else if (servePlayer2.isChecked()){
+                } else if (servePlayer2.isChecked()) {
                     Boolean servePlayer = servePlayer2.isChecked();
                     servePlayer2.setChecked(true);
                     match5Intent.putExtra("serve_player_2", servePlayer);
@@ -73,8 +72,7 @@ public class MenuActivity extends AppCompatActivity {
                 }
                 if (fiveSets.isChecked()) {
                     startActivity(match5Intent);
-                }
-                else if (threeSets.isChecked()) {
+                } else if (threeSets.isChecked()) {
                     startActivity(match3Intent);
 
                 }

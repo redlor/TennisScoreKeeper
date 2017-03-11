@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Let\'s play Tennis</string>
+    <string name="app_name">Udacity Open</string>
     <string name="label_main_title">Udacity Open</string>
     <string name="hint_enter_name">Insert Name</string>
     <string name="btn_enter_button">Start</string>

@@ -51,7 +51,7 @@ public class StatsActivity extends AppCompatActivity {
         TextView txtErrorsPlayer2 = (TextView) findViewById(R.id.txt_errors_player2);
         txtErrorsPlayer2.setText(String.valueOf(errPL2));
 
-        Button goToMainMenu = (Button)findViewById(R.id.btn_go_to_main_menu);
+        Button goToMainMenu = (Button) findViewById(R.id.btn_go_to_main_menu);
         goToMainMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
