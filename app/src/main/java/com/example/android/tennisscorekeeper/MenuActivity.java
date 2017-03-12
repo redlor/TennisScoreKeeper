@@ -1,5 +1,6 @@
 package com.example.android.tennisscorekeeper;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +9,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.Toast;
 
 /**
  * Created by Hp on 28/02/2017.
@@ -70,11 +72,15 @@ public class MenuActivity extends AppCompatActivity {
                     match5Intent.putExtra("serve_player_2", servePlayer);
                     match3Intent.putExtra("serve_player_2", servePlayer);
                 }
-                if (fiveSets.isChecked()) {
+                if (fiveSets.isChecked() && (servePlayer1.isChecked() | servePlayer2.isChecked())) {
                     startActivity(match5Intent);
-                } else if (threeSets.isChecked()) {
+                } else if (threeSets.isChecked()&& (servePlayer1.isChecked() | servePlayer2.isChecked())) {
                     startActivity(match3Intent);
-
+                }
+                else {
+                    Context context = getBaseContext();
+                    CharSequence text = "Please select an option to start the match";
+                    Toast.makeText(context, text, Toast.LENGTH_LONG).show();
                 }
 
             }
