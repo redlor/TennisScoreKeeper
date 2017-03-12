@@ -138,7 +138,6 @@
         style="@style/button"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/smallball"
         android:scaleX="1.5"
         android:scaleY="1.5"
         android:text="@string/btn_enter_button" />

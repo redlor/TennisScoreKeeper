@@ -7,7 +7,6 @@ import android.support.v7.widget.CardView;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -56,7 +55,6 @@ public class FiveSetsActivity extends AppCompatActivity {
     int acePlayer2 = 0;
 
     private TextView invPlayer1, invPlayer2, invADvPlayer1, invAdvPlayer2;
-    private EditText editPl1, editPl2;
     private TextView txtPl1, txtPl2;
     private TextView invTiePlayer1, invTiePlayer2;
     private TextView tieSet1Player1, tieSet2Player1, tieSet3Player1, tieSet4Player1, tieSet5Player1, tieSet1Player2, tieSet2Player2, tieSet3Player2, tieSet4Player2, tieSet5Player2;
@@ -197,6 +195,14 @@ public class FiveSetsActivity extends AppCompatActivity {
         displayGamesPlayer2Set3(scorePlayer2Set3);
         displayGamesPlayer2Set4(scorePlayer2Set4);
         displayGamesPlayer2Set5(scorePlayer2Set5);
+        displayPointsPlayer1(pointsWonPlayer1);
+        displayPointsPlayer2(pointsWonPlayer2);
+        displayAcesPlayer1(acePlayer1);
+        displayAcesPlayer2(acePlayer2);
+        displayWinnersPlayer1(winPlayer1);
+        displayWinnersPlayer2(winPlayer2);
+        displayErrorsPlayer1(errPlayer1);
+        displayErrorsPlayer2(errPlayer2);
     }
 
     @Override
@@ -392,6 +398,7 @@ public class FiveSetsActivity extends AppCompatActivity {
             displayForPlayer1(scorePlayer1);
         }
         pointsWonPlayer1 = pointsWonPlayer1 + 1;
+        displayPointsPlayer1(pointsWonPlayer1);
     }
 
     public void addFifteenForPlayer2(View view) {
@@ -424,36 +431,43 @@ public class FiveSetsActivity extends AppCompatActivity {
             displayForPlayer2(scorePlayer2);
         }
         pointsWonPlayer2 = pointsWonPlayer2 + 1;
+        displayPointsPlayer2(pointsWonPlayer2);
     }
 
     public void aceForPlayer1(View v) {
         acePlayer1 = acePlayer1 + 1;
         addFifteenForPlayer1(v);
+        displayAcesPlayer1(acePlayer1);
     }
 
     public void aceForPlayer2(View v) {
         acePlayer2 = acePlayer2 + 1;
         addFifteenForPlayer2(v);
+        displayAcesPlayer2(acePlayer2);
     }
 
     public void winnerPlayer1(View v) {
         winPlayer1 = winPlayer1 + 1;
         addFifteenForPlayer1(v);
+        displayWinnersPlayer1(winPlayer1);
     }
 
     public void winnerPlayer2(View v) {
         winPlayer2 = winPlayer2 + 1;
         addFifteenForPlayer2(v);
+        displayWinnersPlayer2(winPlayer2);
     }
 
     public void errorPlayer1(View v) {
         errPlayer1 = errPlayer1 + 1;
         addFifteenForPlayer2(v);
+        displayErrorsPlayer1(errPlayer1);
     }
 
     public void errorPlayer2(View v) {
         errPlayer2 = errPlayer2 + 1;
         addFifteenForPlayer1(v);
+        displayErrorsPlayer2(errPlayer2);
     }
 
     /**
@@ -801,7 +815,7 @@ public class FiveSetsActivity extends AppCompatActivity {
         tieSet5Player2.setVisibility(View.INVISIBLE);
     }
 
-    public void setsVisibles() {
+    public void setsVisible() {
         cardSet4Pl1.setVisibility(View.VISIBLE);
         cardSet4Pl2.setVisibility(View.VISIBLE);
         cardSet5Pl1.setVisibility(View.VISIBLE);
@@ -903,11 +917,43 @@ public class FiveSetsActivity extends AppCompatActivity {
         scoreView.setText(String.valueOf(score));
     }
 
+
     public void displayGamesPlayer2Set5(int score) {
         TextView scoreView = (TextView) findViewById(R.id.set_5_score_player2);
         scoreView.setText(String.valueOf(score));
     }
-
+    public void displayPointsPlayer1(int score) {
+        TextView txtPointsPlayer1 = (TextView) findViewById(R.id.txt_points_player1);
+        txtPointsPlayer1.setText(String.valueOf(pointsWonPlayer1));
+    }
+    public void displayPointsPlayer2(int score) {
+        TextView txtPointsPlayer2 = (TextView) findViewById(R.id.txt_points_player2);
+        txtPointsPlayer2.setText(String.valueOf(pointsWonPlayer2));
+    }
+    public void displayAcesPlayer1(int score) {
+        TextView txtAcesPlayer1 = (TextView) findViewById(R.id.txt_aces_player1);
+        txtAcesPlayer1.setText(String.valueOf(acePlayer1));
+    }
+    public void displayAcesPlayer2(int score) {
+        TextView txtAcesPlayer2 = (TextView) findViewById(R.id.txt_aces_player2);
+        txtAcesPlayer2.setText(String.valueOf(acePlayer2));
+    }
+    public void displayWinnersPlayer1(int score) {
+        TextView txtWinnersPlayer1 = (TextView) findViewById(R.id.txt_winners_player1);
+        txtWinnersPlayer1.setText(String.valueOf(winPlayer1));
+    }
+    public void displayWinnersPlayer2(int score) {
+        TextView txtWinnersPlayer2 = (TextView) findViewById(R.id.txt_winners_player2);
+        txtWinnersPlayer2.setText(String.valueOf(winPlayer2));
+    }
+    public void displayErrorsPlayer1(int score) {
+        TextView txtErrorsPlayer1 = (TextView) findViewById(R.id.txt_errors_player1);
+        txtErrorsPlayer1.setText(String.valueOf(errPlayer1));
+    }
+    public void displayErrorsPlayer2(int score) {
+        TextView txtErrorsPlayer2 = (TextView) findViewById(R.id.txt_errors_player2);
+        txtErrorsPlayer2.setText(String.valueOf(errPlayer2));
+    }
     public void displayTiePlayer1Set1(int score) {
         tieSet1Player1.setText(String.valueOf(score));
     }
@@ -1003,7 +1049,7 @@ public class FiveSetsActivity extends AppCompatActivity {
         displayGamesPlayer1Set5(scorePlayer1Set5);
         displayGamesPlayer2Set5(scorePlayer2Set5);
         tieSetsInvisible();
-        setsVisibles();
+        setsVisible();
     }
 
 

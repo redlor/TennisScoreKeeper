@@ -162,6 +162,14 @@ public class ThreeSetsActivity extends AppCompatActivity {
         displayGamesPlayer2Set1(scorePlayer2Set1);
         displayGamesPlayer2Set2(scorePlayer2Set2);
         displayGamesPlayer2Set3(scorePlayer2Set3);
+        displayPointsPlayer1(pointsWonPlayer1);
+        displayPointsPlayer2(pointsWonPlayer2);
+        displayAcesPlayer1(acePlayer1);
+        displayAcesPlayer2(acePlayer2);
+        displayWinnersPlayer1(winPlayer1);
+        displayWinnersPlayer2(winPlayer2);
+        displayErrorsPlayer1(errPlayer1);
+        displayErrorsPlayer2(errPlayer2);
 
     }
 
@@ -341,6 +349,7 @@ public class ThreeSetsActivity extends AppCompatActivity {
             displayForPlayer1(scorePlayer1);
         }
         pointsWonPlayer1 = pointsWonPlayer1 + 1;
+        displayPointsPlayer1(pointsWonPlayer1);
     }
 
     public void addFifteenForPlayer2(View view) {
@@ -372,38 +381,44 @@ public class ThreeSetsActivity extends AppCompatActivity {
             displayForPlayer2(scorePlayer2);
         }
         pointsWonPlayer2 = pointsWonPlayer2 + 1;
+        displayPointsPlayer2(pointsWonPlayer2);
     }
 
     public void aceForPlayer1(View v) {
         acePlayer1 = acePlayer1 + 1;
         addFifteenForPlayer1(v);
+        displayAcesPlayer1(acePlayer1);
     }
 
     public void aceForPlayer2(View v) {
         acePlayer2 = acePlayer2 + 1;
         addFifteenForPlayer2(v);
+        displayAcesPlayer2(acePlayer2);
     }
 
     public void winnerPlayer1(View v) {
         winPlayer1 = winPlayer1 + 1;
         addFifteenForPlayer1(v);
+        displayWinnersPlayer1(winPlayer1);
     }
 
     public void winnerPlayer2(View v) {
         winPlayer2 = winPlayer2 + 1;
         addFifteenForPlayer2(v);
+        displayWinnersPlayer2(winPlayer2);
     }
 
     public void errorPlayer1(View v) {
         errPlayer1 = errPlayer1 + 1;
         addFifteenForPlayer2(v);
+        displayErrorsPlayer1(errPlayer1);
     }
 
     public void errorPlayer2(View v) {
         errPlayer2 = errPlayer2 + 1;
         addFifteenForPlayer1(v);
+        displayErrorsPlayer2(errPlayer2);
     }
-
     /**
      * Tie break methods
      */
@@ -735,7 +750,38 @@ public class ThreeSetsActivity extends AppCompatActivity {
         TextView scoreView = (TextView) findViewById(R.id.set_3_score_player2);
         scoreView.setText(String.valueOf(score));
     }
-
+    public void displayPointsPlayer1(int score) {
+        TextView txtPointsPlayer1 = (TextView) findViewById(R.id.txt_points_player1);
+        txtPointsPlayer1.setText(String.valueOf(pointsWonPlayer1));
+    }
+    public void displayPointsPlayer2(int score) {
+        TextView txtPointsPlayer2 = (TextView) findViewById(R.id.txt_points_player2);
+        txtPointsPlayer2.setText(String.valueOf(pointsWonPlayer2));
+    }
+    public void displayAcesPlayer1(int score) {
+        TextView txtAcesPlayer1 = (TextView) findViewById(R.id.txt_aces_player1);
+        txtAcesPlayer1.setText(String.valueOf(acePlayer1));
+    }
+    public void displayAcesPlayer2(int score) {
+        TextView txtAcesPlayer2 = (TextView) findViewById(R.id.txt_aces_player2);
+        txtAcesPlayer2.setText(String.valueOf(acePlayer2));
+    }
+    public void displayWinnersPlayer1(int score) {
+        TextView txtWinnersPlayer1 = (TextView) findViewById(R.id.txt_winners_player1);
+        txtWinnersPlayer1.setText(String.valueOf(winPlayer1));
+    }
+    public void displayWinnersPlayer2(int score) {
+        TextView txtWinnersPlayer2 = (TextView) findViewById(R.id.txt_winners_player2);
+        txtWinnersPlayer2.setText(String.valueOf(winPlayer2));
+    }
+    public void displayErrorsPlayer1(int score) {
+        TextView txtErrorsPlayer1 = (TextView) findViewById(R.id.txt_errors_player1);
+        txtErrorsPlayer1.setText(String.valueOf(errPlayer1));
+    }
+    public void displayErrorsPlayer2(int score) {
+        TextView txtErrorsPlayer2 = (TextView) findViewById(R.id.txt_errors_player2);
+        txtErrorsPlayer2.setText(String.valueOf(errPlayer2));
+    }
     public void displayTiePlayer1Set1(int score) {
         tieSet1Player1.setText(String.valueOf(score));
     }
