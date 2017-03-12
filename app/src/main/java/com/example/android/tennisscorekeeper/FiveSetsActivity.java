@@ -1048,6 +1048,14 @@ public class FiveSetsActivity extends AppCompatActivity {
         displayGamesPlayer2Set4(scorePlayer2Set4);
         displayGamesPlayer1Set5(scorePlayer1Set5);
         displayGamesPlayer2Set5(scorePlayer2Set5);
+        displayPointsPlayer1(pointsWonPlayer1);
+        displayPointsPlayer2(pointsWonPlayer2);
+        displayAcesPlayer1(acePlayer1);
+        displayAcesPlayer2(acePlayer2);
+        displayWinnersPlayer1(winPlayer1);
+        displayWinnersPlayer2(winPlayer2);
+        displayErrorsPlayer1(errPlayer1);
+        displayErrorsPlayer2(errPlayer2);
         tieSetsInvisible();
         setsVisible();
     }

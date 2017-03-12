@@ -848,6 +848,14 @@ public class ThreeSetsActivity extends AppCompatActivity {
         displayGamesPlayer2Set2(scorePlayer2Set2);
         displayGamesPlayer1Set3(scorePlayer1Set3);
         displayGamesPlayer2Set3(scorePlayer2Set3);
+        displayPointsPlayer1(pointsWonPlayer1);
+        displayPointsPlayer2(pointsWonPlayer2);
+        displayAcesPlayer1(acePlayer1);
+        displayAcesPlayer2(acePlayer2);
+        displayWinnersPlayer1(winPlayer1);
+        displayWinnersPlayer2(winPlayer2);
+        displayErrorsPlayer1(errPlayer1);
+        displayErrorsPlayer2(errPlayer2);
         tieSetsInvisible();
         setsVisibles();
     }
