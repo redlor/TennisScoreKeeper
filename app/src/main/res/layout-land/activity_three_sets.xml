@@ -243,7 +243,6 @@
                 style="@style/resetButton"
                 android:layout_marginRight="@dimen/sideMargin"
                 android:background="@drawable/buttonshape"
-                android:scaleX="0.5"
                 android:text="@string/stats_button" />
 
             <Button
@@ -257,7 +256,6 @@
                 style="@style/resetButton"
                 android:background="@drawable/buttonshape"
                 android:onClick="resetAll"
-                android:scaleX="0.5"
                 android:text="@string/reset" />
 
 

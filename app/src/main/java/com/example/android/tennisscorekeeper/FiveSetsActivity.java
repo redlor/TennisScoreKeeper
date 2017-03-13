@@ -917,12 +917,11 @@ public class FiveSetsActivity extends AppCompatActivity {
         scoreView.setText(String.valueOf(score));
     }
 
-
     public void displayGamesPlayer2Set5(int score) {
         TextView scoreView = (TextView) findViewById(R.id.set_5_score_player2);
         scoreView.setText(String.valueOf(score));
     }
-    public void displayPointsPlayer1(int score) {
+    public void displayPointsPlayer1(int pointsWonPlayer1) {
         TextView txtPointsPlayer1 = (TextView) findViewById(R.id.txt_points_player1);
         txtPointsPlayer1.setText(String.valueOf(pointsWonPlayer1));
     }

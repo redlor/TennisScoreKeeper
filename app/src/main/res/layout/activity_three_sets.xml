@@ -13,13 +13,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/smallMargin"
-        android:layout_marginTop="@dimen/bigMargin"
         android:orientation="horizontal">
 
-        <!--<EditText
-            android:id="@+id/text_player_1"
-            style="@style/PlayerText"
-            android:hint="@string/player1_name"/>-->
         <ImageView
             android:id="@+id/ball_player1"
             style="@style/ballImage" />
@@ -349,7 +344,6 @@
             style="@style/resetButton"
             android:layout_marginRight="@dimen/sideMargin"
             android:background="@drawable/buttonshape"
-            android:scaleX="0.5"
             android:text="@string/stats_button" />
 
         <Button
@@ -363,7 +357,6 @@
             style="@style/resetButton"
             android:background="@drawable/buttonshape"
             android:onClick="resetAll"
-            android:scaleX="0.5"
             android:text="@string/reset" />
 
 

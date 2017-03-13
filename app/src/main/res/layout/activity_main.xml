@@ -13,7 +13,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/smallMargin"
-        android:layout_marginTop="@dimen/bigMargin"
         android:orientation="horizontal">
 
         <ImageView
@@ -421,7 +420,6 @@
             style="@style/resetButton"
             android:layout_marginRight="@dimen/sideMargin"
             android:background="@drawable/buttonshape"
-            android:scaleX="0.5"
             android:text="@string/stats_button" />
 
         <Button
@@ -429,15 +427,12 @@
             style="@style/resetButton"
             android:layout_marginRight="@dimen/sideMargin"
             android:background="@drawable/tennisball"
-            android:scaleX="1"
-            android:scaleY="1"
             android:text="@string/main_menu_button" />
 
         <Button
             style="@style/resetButton"
             android:background="@drawable/buttonshape"
             android:onClick="resetAll"
-            android:scaleX="0.5"
             android:text="@string/reset" />
 
 
