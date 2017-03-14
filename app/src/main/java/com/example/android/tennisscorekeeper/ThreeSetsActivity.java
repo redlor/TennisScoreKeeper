@@ -1,6 +1,8 @@
 package com.example.android.tennisscorekeeper;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
@@ -60,6 +62,7 @@ public class ThreeSetsActivity extends AppCompatActivity {
     private ImageView ballPlayer1, ballPlayer2;
     private boolean ball1, ball2;
     private CardView cardSet3Pl1, cardSet3Pl2, cardPointsPl1, cardPointsPl2;
+    private Button btnPointPlayer1, btnPointPlayer2, btnAcePlayer1, btnAcePlayer2, btnWinnerPlayer1, btnWinnerPlayer2, btnErrorPlayer1, btnErrorPlayer2;
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {               // save variable to temporary variable
@@ -261,11 +264,20 @@ public class ThreeSetsActivity extends AppCompatActivity {
         txtSet1Pl2 = (TextView) findViewById(R.id.set_1_score_player2);
         txtSet2Pl2 = (TextView) findViewById(R.id.set_2_score_player2);
         txtSet3Pl2 = (TextView) findViewById(R.id.set_3_score_player2);
-        ;
+
         cardSet3Pl1 = (CardView) findViewById(R.id.card_3_set_player1);
         cardSet3Pl2 = (CardView) findViewById(R.id.card_3_set_player2);
         cardPointsPl1 = (CardView) findViewById(R.id.card_point_player1);
         cardPointsPl2 = (CardView) findViewById(R.id.card_point_player2);
+
+        btnPointPlayer1 = (Button) findViewById(R.id.btn_point_player1);
+        btnPointPlayer2 = (Button) findViewById(R.id.btn_point_player2);
+        btnAcePlayer1 = (Button) findViewById(R.id.btn_ace_player1);
+        btnAcePlayer2 = (Button) findViewById(R.id.btn_ace_player2);
+        btnWinnerPlayer1 = (Button) findViewById(R.id.btn_winner_player1);
+        btnWinnerPlayer2 = (Button) findViewById(R.id.btn_winner_player2);
+        btnErrorPlayer1 = (Button) findViewById(R.id.btn_error_player1);
+        btnErrorPlayer2 = (Button) findViewById(R.id.btn_error_player2);
 
 
         Button goToMainMenu = (Button) findViewById(R.id.btn_go_to_main_menu);
@@ -525,9 +537,9 @@ public class ThreeSetsActivity extends AppCompatActivity {
             scorePlayer2Set1 = scorePlayer2Set1 + 1;
             resetGame();
         }
-        if ((scorePlayer1Set1 > scorePlayer2Set1) && ((scorePlayer1Set1 >= 6 & scorePlayer2Set1 < 5) | (scorePlayer1Set1 == 7 & scorePlayer2Set1 >= 5))) {
+        if ((scorePlayer1Set1 > scorePlayer2Set1) & ((scorePlayer1Set1 >= 6 & scorePlayer2Set1 < 5) | (scorePlayer1Set1 == 7 & scorePlayer2Set1 >= 5))) {
             setsWonPlayer1 = setsWonPlayer1 + 1;
-        } else if ((scorePlayer2Set1 > scorePlayer1Set1) && ((scorePlayer2Set1 >= 6) & scorePlayer1Set1 < 5) | (scorePlayer2Set1 == 7 & scorePlayer1Set1 >= 5)) {
+        } else if ((scorePlayer2Set1 > scorePlayer1Set1) & ((scorePlayer2Set1 >= 6) & scorePlayer1Set1 < 5) | (scorePlayer2Set1 == 7 & scorePlayer1Set1 >= 5)) {
             setsWonPlayer2 = setsWonPlayer2 + 1;
         }
         System.out.println(scorePlayer1Set1);
@@ -544,28 +556,12 @@ public class ThreeSetsActivity extends AppCompatActivity {
             scorePlayer2Set2 = scorePlayer2Set2 + 1;
             resetGame();
         }
-        if ((scorePlayer1Set2 > scorePlayer2Set2) && ((scorePlayer1Set2 >= 6 & scorePlayer2Set2 < 5) | (scorePlayer1Set2 == 7 & scorePlayer2Set2 >= 5))) {
+        if ((scorePlayer1Set2 > scorePlayer2Set2) & ((scorePlayer1Set2 >= 6 & scorePlayer2Set2 < 5) | (scorePlayer1Set2 == 7 & scorePlayer2Set2 >= 5))) {
             setsWonPlayer1 = setsWonPlayer1 + 1;
-        } else if ((scorePlayer2Set2 > scorePlayer1Set2) && ((scorePlayer2Set2 >= 6 & scorePlayer1Set2 < 5) | (scorePlayer2Set2 == 7 & scorePlayer1Set2 >= 5))) {
+        } else if ((scorePlayer2Set2 > scorePlayer1Set2) & ((scorePlayer2Set2 >= 6 & scorePlayer1Set2 < 5) | (scorePlayer2Set2 == 7 & scorePlayer1Set2 >= 5))) {
             setsWonPlayer2 = setsWonPlayer2 + 1;
         }
-        if (setsWonPlayer1 == 2) {
-            Toast.makeText(this, pl1 + "  won the match!", Toast.LENGTH_LONG).show();
-            cardSet3Pl1.setVisibility(View.INVISIBLE);
-            cardSet3Pl2.setVisibility(View.INVISIBLE);
-            cardPointsPl1.setVisibility(View.INVISIBLE);
-            cardPointsPl2.setVisibility(View.INVISIBLE);
-            ballPlayer1.setVisibility(View.INVISIBLE);
-            ballPlayer2.setVisibility(View.INVISIBLE);
-        } else if (setsWonPlayer2 == 2) {
-            Toast.makeText(this, pl2 + "  won the match!", Toast.LENGTH_LONG).show();
-            cardSet3Pl1.setVisibility(View.INVISIBLE);
-            cardSet3Pl2.setVisibility(View.INVISIBLE);
-            cardPointsPl1.setVisibility(View.INVISIBLE);
-            cardPointsPl2.setVisibility(View.INVISIBLE);
-            ballPlayer1.setVisibility(View.INVISIBLE);
-            ballPlayer2.setVisibility(View.INVISIBLE);
-        }
+       matchWon();
     }
 
     public void comparePointsSet3() {
@@ -576,28 +572,16 @@ public class ThreeSetsActivity extends AppCompatActivity {
             scorePlayer2Set3 = scorePlayer2Set3 + 1;
             resetGame();
         }
-        if ((scorePlayer1Set3 > scorePlayer2Set3) && ((scorePlayer1Set3 >= 6 & scorePlayer2Set3 < 5) | (scorePlayer1Set3 == 7 & scorePlayer2Set3 >= 5))) {
+        if ((scorePlayer1Set3 > scorePlayer2Set3) & ((scorePlayer1Set3 >= 6 & scorePlayer2Set3 < 5) | (scorePlayer1Set3 == 7 & scorePlayer2Set3 >= 5))) {
             setsWonPlayer1 = setsWonPlayer1 + 1;
-        } else if ((scorePlayer2Set3 > scorePlayer1Set3) && ((scorePlayer2Set3 >= 6 & scorePlayer1Set3 < 5) | (scorePlayer2Set3 == 7 & scorePlayer1Set3 >= 5))) {
+        } else if ((scorePlayer2Set3 > scorePlayer1Set3) & ((scorePlayer2Set3 >= 6 & scorePlayer1Set3 < 5) | (scorePlayer2Set3 == 7 & scorePlayer1Set3 >= 5))) {
             setsWonPlayer2 = setsWonPlayer2 + 1;
         }
         System.out.println(scorePlayer1Set3);
         System.out.println(scorePlayer2Set3);
         System.out.println(setsWonPlayer1);
         System.out.println(setsWonPlayer2);
-        if (setsWonPlayer1 == 2) {
-            Toast.makeText(this, pl1 + "  won the match!", Toast.LENGTH_LONG).show();
-            cardPointsPl1.setVisibility(View.INVISIBLE);
-            cardPointsPl2.setVisibility(View.INVISIBLE);
-            ballPlayer1.setVisibility(View.INVISIBLE);
-            ballPlayer2.setVisibility(View.INVISIBLE);
-        } else if (setsWonPlayer2 == 2) {
-            Toast.makeText(this, pl2 + "  won the match!", Toast.LENGTH_LONG).show();
-            cardPointsPl1.setVisibility(View.INVISIBLE);
-            cardPointsPl2.setVisibility(View.INVISIBLE);
-            ballPlayer1.setVisibility(View.INVISIBLE);
-            ballPlayer2.setVisibility(View.INVISIBLE);
-        }
+      matchWon();
     }
 
 
@@ -623,7 +607,47 @@ public class ThreeSetsActivity extends AppCompatActivity {
             displayGamesPlayer2Set3(scorePlayer2Set3);
         }
     }
-
+    /**
+     * This method checks if a player won the match and disable buttons.
+     * Orientation is locked when the match is over.
+     */
+    public void matchWon(){
+        if (setsWonPlayer1 == 2) {
+            int currentOrientation = getResources().getConfiguration().orientation;
+            if (currentOrientation == Configuration.ORIENTATION_LANDSCAPE) {
+                setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE);
+            }
+            else {
+                setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT);
+            }
+            Toast.makeText(this, pl1 + "  won the match!", Toast.LENGTH_LONG).show();
+            btnPointPlayer1.setEnabled(false);
+            btnPointPlayer2.setEnabled(false);
+            btnAcePlayer1.setEnabled(false);
+            btnAcePlayer2.setEnabled(false);
+            btnWinnerPlayer1.setEnabled(false);
+            btnWinnerPlayer2.setEnabled(false);
+            btnErrorPlayer1.setEnabled(false);
+            btnErrorPlayer2.setEnabled(false);
+        } else if (setsWonPlayer2 == 2) {
+            int currentOrientation = getResources().getConfiguration().orientation;
+            if (currentOrientation == Configuration.ORIENTATION_LANDSCAPE) {
+                setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE);
+            }
+            else {
+                setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT);
+            }
+            Toast.makeText(this, pl2 + "  won the match!", Toast.LENGTH_LONG).show();
+            btnPointPlayer1.setEnabled(false);
+            btnPointPlayer2.setEnabled(false);
+            btnAcePlayer1.setEnabled(false);
+            btnAcePlayer2.setEnabled(false);
+            btnWinnerPlayer1.setEnabled(false);
+            btnWinnerPlayer2.setEnabled(false);
+            btnErrorPlayer1.setEnabled(false);
+            btnErrorPlayer2.setEnabled(false);
+        }
+    }
     /**
      * These methods set the visibility to the current points type
      * Method ballPlayer change the ball to the player who is serving
@@ -858,7 +882,15 @@ public class ThreeSetsActivity extends AppCompatActivity {
         displayErrorsPlayer2(errPlayer2);
         tieSetsInvisible();
         setsVisibles();
+        btnPointPlayer1.setEnabled(true);
+        btnPointPlayer2.setEnabled(true);
+        btnAcePlayer1.setEnabled(true);
+        btnAcePlayer2.setEnabled(true);
+        btnWinnerPlayer1.setEnabled(true);
+        btnWinnerPlayer2.setEnabled(true);
+        btnErrorPlayer1.setEnabled(true);
+        btnErrorPlayer2.setEnabled(true);
+    }
     }
 
 
-}

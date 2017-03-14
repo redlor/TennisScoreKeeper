@@ -1,6 +1,8 @@
 package com.example.android.tennisscorekeeper;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
@@ -62,6 +64,7 @@ public class FiveSetsActivity extends AppCompatActivity {
     private boolean ball1, ball2;
     private TextView txtSet1Pl1, txtSet2Pl1, txtSet3Pl1, txtSet4Pl1, txtSet5Pl1, txtSet1Pl2, txtSet2Pl2, txtSet3Pl2, txtSet4Pl2, txtSet5Pl2;
     private CardView cardSet4Pl1, cardSet4Pl2, cardSet5Pl1, cardSet5Pl2, cardPointsPl1, cardPointsPl2;
+    private Button btnPointPlayer1, btnPointPlayer2, btnAcePlayer1, btnAcePlayer2, btnWinnerPlayer1, btnWinnerPlayer2, btnErrorPlayer1, btnErrorPlayer2;
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {               // save variable to temporary variable
@@ -100,6 +103,8 @@ public class FiveSetsActivity extends AppCompatActivity {
         outState.putInt("winPlayer2", winPlayer2);
         outState.putInt("errPlayer1", errPlayer1);
         outState.putInt("errPlayer2", errPlayer2);
+        outState.putInt("setsWonPlayer1", setsWonPlayer1);
+        outState.putInt("setsWonPlayer2", setsWonPlayer2);
 
 
     }
@@ -140,6 +145,8 @@ public class FiveSetsActivity extends AppCompatActivity {
         winPlayer2 = savedInstanceState.getInt("winPlayer1");
         errPlayer1 = savedInstanceState.getInt("errPlayer1");
         errPlayer2 = savedInstanceState.getInt("errPlayer1");
+        setsWonPlayer1 = savedInstanceState.getInt("setsWonPlayer1");
+        setsWonPlayer2 = savedInstanceState.getInt("setsWonPlayer2");
 
         if (Advantage1.equals("AD") | Advantage2.equals("AD")) {
             advantageVisible();
@@ -185,6 +192,7 @@ public class FiveSetsActivity extends AppCompatActivity {
             displayTiePlayer1Set5(player1TieSet5);
             displayTiePlayer2Set5(player2TieSet5);
         }
+
         displayGamesPlayer1Set1(scorePlayer1Set1);
         displayGamesPlayer1Set2(scorePlayer1Set2);
         displayGamesPlayer1Set3(scorePlayer1Set3);
@@ -243,6 +251,8 @@ public class FiveSetsActivity extends AppCompatActivity {
             winPlayer2 = savedInstanceState.getInt("winPlayer1");
             errPlayer1 = savedInstanceState.getInt("errPlayer1");
             errPlayer2 = savedInstanceState.getInt("errPlayer1");
+            setsWonPlayer1 = savedInstanceState.getInt("setsWonPlayer1");
+            setsWonPlayer2 = savedInstanceState.getInt("setsWonPlayer2");
         }
         this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
         setContentView(R.layout.activity_main);
@@ -315,6 +325,14 @@ public class FiveSetsActivity extends AppCompatActivity {
         cardPointsPl1 = (CardView) findViewById(R.id.card_point_player1);
         cardPointsPl2 = (CardView) findViewById(R.id.card_point_player2);
 
+        btnPointPlayer1 = (Button) findViewById(R.id.btn_point_player1);
+        btnPointPlayer2 = (Button) findViewById(R.id.btn_point_player2);
+        btnAcePlayer1 = (Button) findViewById(R.id.btn_ace_player1);
+        btnAcePlayer2 = (Button) findViewById(R.id.btn_ace_player2);
+        btnWinnerPlayer1 = (Button) findViewById(R.id.btn_winner_player1);
+        btnWinnerPlayer2 = (Button) findViewById(R.id.btn_winner_player2);
+        btnErrorPlayer1 = (Button) findViewById(R.id.btn_error_player1);
+        btnErrorPlayer2 = (Button) findViewById(R.id.btn_error_player2);
 
         Button goToMainMenu = (Button) findViewById(R.id.btn_go_to_main_menu);
         goToMainMenu.setOnClickListener(new View.OnClickListener() {
@@ -329,6 +347,7 @@ public class FiveSetsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent statsIntent = new Intent(FiveSetsActivity.this, StatsActivity.class);
+                statsIntent.putExtra("scorePlayer1Set1", scorePlayer1Set1);
                 statsIntent.putExtra("points_won_player1", pointsWonPlayer1);
                 statsIntent.putExtra("points_won_player2", pointsWonPlayer2);
                 statsIntent.putExtra("ace_player1", acePlayer1);
@@ -606,9 +625,9 @@ public class FiveSetsActivity extends AppCompatActivity {
             scorePlayer2Set1 = scorePlayer2Set1 + 1;
             resetGame();
         }
-        if ((scorePlayer1Set1 > scorePlayer2Set1) && ((scorePlayer1Set1 >= 6 & scorePlayer2Set1 < 5) | (scorePlayer1Set1 == 7 & scorePlayer2Set1 >= 5))) {
+        if ((scorePlayer1Set1 > scorePlayer2Set1) & ((scorePlayer1Set1 >= 6 & scorePlayer2Set1 < 5) | (scorePlayer1Set1 == 7 & scorePlayer2Set1 >= 5))) {
             setsWonPlayer1 = setsWonPlayer1 + 1;
-        } else if ((scorePlayer2Set1 > scorePlayer1Set1) && ((scorePlayer2Set1 >= 6 & scorePlayer1Set1 < 5) | (scorePlayer2Set1 == 7 & scorePlayer1Set1 >= 5))) {
+        } else if ((scorePlayer2Set1 > scorePlayer1Set1) & ((scorePlayer2Set1 >= 6 & scorePlayer1Set1 < 5) | (scorePlayer2Set1 == 7 & scorePlayer1Set1 >= 5))) {
             setsWonPlayer2 = setsWonPlayer2 + 1;
         }
         System.out.println(scorePlayer1Set1);
@@ -625,9 +644,9 @@ public class FiveSetsActivity extends AppCompatActivity {
             scorePlayer2Set2 = scorePlayer2Set2 + 1;
             resetGame();
         }
-        if ((scorePlayer1Set2 > scorePlayer2Set2) && ((scorePlayer1Set2 >= 6 & scorePlayer2Set2 < 5) | (scorePlayer1Set2 == 7 & scorePlayer2Set2 >= 5))) {
+        if ((scorePlayer1Set2 > scorePlayer2Set2) & ((scorePlayer1Set2 >= 6 & scorePlayer2Set2 < 5) | (scorePlayer1Set2 == 7 & scorePlayer2Set2 >= 5))) {
             setsWonPlayer1 = setsWonPlayer1 + 1;
-        } else if ((scorePlayer2Set2 > scorePlayer1Set2) && ((scorePlayer2Set2 >= 6 & scorePlayer1Set2 < 5) | (scorePlayer2Set2 == 7 & scorePlayer1Set2 >= 5))) {
+        } else if ((scorePlayer2Set2 > scorePlayer1Set2) & ((scorePlayer2Set2 >= 6 & scorePlayer1Set2 < 5) | (scorePlayer2Set2 == 7 & scorePlayer1Set2 >= 5))) {
             setsWonPlayer2 = setsWonPlayer2 + 1;
         }
         System.out.println(scorePlayer1Set2);
@@ -644,36 +663,16 @@ public class FiveSetsActivity extends AppCompatActivity {
             scorePlayer2Set3 = scorePlayer2Set3 + 1;
             resetGame();
         }
-        if ((scorePlayer1Set3 > scorePlayer2Set3) && ((scorePlayer1Set3 >= 6 & scorePlayer2Set3 < 5) | (scorePlayer1Set3 == 7 & scorePlayer2Set3 >= 5))) {
+        if ((scorePlayer1Set3 > scorePlayer2Set3) & ((scorePlayer1Set3 >= 6 & scorePlayer2Set3 < 5) | (scorePlayer1Set3 == 7 & scorePlayer2Set3 >= 5))) {
             setsWonPlayer1 = setsWonPlayer1 + 1;
-        } else if ((scorePlayer2Set3 > scorePlayer1Set3) && (scorePlayer2Set3 >= 6 & scorePlayer1Set3 < 5) | (scorePlayer2Set3 == 7 & scorePlayer1Set3 >= 5)) {
+        } else if ((scorePlayer2Set3 > scorePlayer1Set3) & (scorePlayer2Set3 >= 6 & scorePlayer1Set3 < 5) | (scorePlayer2Set3 == 7 & scorePlayer1Set3 >= 5)) {
             setsWonPlayer2 = setsWonPlayer2 + 1;
         }
         System.out.println(scorePlayer1Set3);
         System.out.println(scorePlayer2Set3);
         System.out.println(setsWonPlayer1);
         System.out.println(setsWonPlayer2);
-        if (setsWonPlayer1 == 3) {
-            Toast.makeText(this, pl1 + "  won the match!", Toast.LENGTH_LONG).show();
-            cardSet4Pl1.setVisibility(View.INVISIBLE);
-            cardSet4Pl2.setVisibility(View.INVISIBLE);
-            cardSet5Pl1.setVisibility(View.INVISIBLE);
-            cardSet5Pl2.setVisibility(View.INVISIBLE);
-            cardPointsPl1.setVisibility(View.INVISIBLE);
-            cardPointsPl2.setVisibility(View.INVISIBLE);
-            ballPlayer1.setVisibility(View.INVISIBLE);
-            ballPlayer2.setVisibility(View.INVISIBLE);
-        } else if (setsWonPlayer2 == 3) {
-            Toast.makeText(this, pl2 + "  won the match!", Toast.LENGTH_LONG).show();
-            cardSet4Pl1.setVisibility(View.INVISIBLE);
-            cardSet4Pl2.setVisibility(View.INVISIBLE);
-            cardSet5Pl1.setVisibility(View.INVISIBLE);
-            cardSet5Pl2.setVisibility(View.INVISIBLE);
-            cardPointsPl1.setVisibility(View.INVISIBLE);
-            cardPointsPl2.setVisibility(View.INVISIBLE);
-            ballPlayer1.setVisibility(View.INVISIBLE);
-            ballPlayer2.setVisibility(View.INVISIBLE);
-        }
+        matchWon();
     }
 
     public void comparePointsSet4() {
@@ -684,28 +683,12 @@ public class FiveSetsActivity extends AppCompatActivity {
             scorePlayer2Set4 = scorePlayer2Set4 + 1;
             resetGame();
         }
-        if ((scorePlayer1Set4 > scorePlayer2Set4) && ((scorePlayer1Set4 >= 6 & scorePlayer2Set4 < 5) | (scorePlayer1Set4 == 7 & scorePlayer2Set4 >= 5))) {
+        if ((scorePlayer1Set4 > scorePlayer2Set4) & ((scorePlayer1Set4 >= 6 & scorePlayer2Set4 < 5) | (scorePlayer1Set4 == 7 & scorePlayer2Set4 >= 5))) {
             setsWonPlayer1 = setsWonPlayer1 + 1;
-        } else if ((scorePlayer2Set4 > scorePlayer1Set4) && ((scorePlayer2Set4 >= 6 & scorePlayer1Set4 < 5) | (scorePlayer2Set4 == 7 & scorePlayer1Set4 >= 5))) {
+        } else if ((scorePlayer2Set4 > scorePlayer1Set4) & ((scorePlayer2Set4 >= 6 & scorePlayer1Set4 < 5) | (scorePlayer2Set4 == 7 & scorePlayer1Set4 >= 5))) {
             setsWonPlayer2 = setsWonPlayer2 + 1;
         }
-        if (setsWonPlayer1 == 3) {
-            Toast.makeText(this, pl1 + "  won the match!", Toast.LENGTH_LONG).show();
-            cardSet5Pl1.setVisibility(View.INVISIBLE);
-            cardSet5Pl2.setVisibility(View.INVISIBLE);
-            cardPointsPl1.setVisibility(View.INVISIBLE);
-            cardPointsPl2.setVisibility(View.INVISIBLE);
-            ballPlayer1.setVisibility(View.INVISIBLE);
-            ballPlayer2.setVisibility(View.INVISIBLE);
-        } else if (setsWonPlayer2 == 3) {
-            Toast.makeText(this, pl2 + "  won the match!", Toast.LENGTH_LONG).show();
-            cardSet5Pl1.setVisibility(View.INVISIBLE);
-            cardSet5Pl2.setVisibility(View.INVISIBLE);
-            cardPointsPl1.setVisibility(View.INVISIBLE);
-            cardPointsPl2.setVisibility(View.INVISIBLE);
-            ballPlayer1.setVisibility(View.INVISIBLE);
-            ballPlayer2.setVisibility(View.INVISIBLE);
-        }
+        matchWon();
     }
 
     public void comparePointsSet5() {
@@ -716,24 +699,12 @@ public class FiveSetsActivity extends AppCompatActivity {
             scorePlayer2Set5 = scorePlayer2Set5 + 1;
             resetGame();
         }
-        if ((scorePlayer1Set5 > scorePlayer2Set5) && ((scorePlayer1Set5 >= 6 & scorePlayer2Set5 < 5) | (scorePlayer1Set5 == 7 & scorePlayer2Set5 >= 5))) {
+        if ((scorePlayer1Set5 > scorePlayer2Set5) & ((scorePlayer1Set5 >= 6 & scorePlayer2Set5 < 5) | (scorePlayer1Set5 == 7 & scorePlayer2Set5 >= 5))) {
             setsWonPlayer1 = setsWonPlayer1 + 1;
-        } else if ((scorePlayer2Set5 > scorePlayer1Set5) && ((scorePlayer2Set5 >= 6 & scorePlayer1Set5 < 5) | (scorePlayer2Set5 == 7 & scorePlayer1Set5 >= 5))) {
+        } else if ((scorePlayer2Set5 > scorePlayer1Set5) & ((scorePlayer2Set5 >= 6 & scorePlayer1Set5 < 5) | (scorePlayer2Set5 == 7 & scorePlayer1Set5 >= 5))) {
             setsWonPlayer2 = setsWonPlayer2 + 1;
         }
-        if (setsWonPlayer1 == 3) {
-            Toast.makeText(this, pl1 + "  won the match!", Toast.LENGTH_LONG).show();
-            cardPointsPl1.setVisibility(View.INVISIBLE);
-            cardPointsPl2.setVisibility(View.INVISIBLE);
-            ballPlayer1.setVisibility(View.INVISIBLE);
-            ballPlayer2.setVisibility(View.INVISIBLE);
-        } else if (setsWonPlayer2 == 3) {
-            Toast.makeText(this, pl2 + "  won the match!", Toast.LENGTH_LONG).show();
-            cardPointsPl1.setVisibility(View.INVISIBLE);
-            cardPointsPl2.setVisibility(View.INVISIBLE);
-            ballPlayer1.setVisibility(View.INVISIBLE);
-            ballPlayer2.setVisibility(View.INVISIBLE);
-        }
+        matchWon();
     }
 
     /**
@@ -768,7 +739,47 @@ public class FiveSetsActivity extends AppCompatActivity {
             displayGamesPlayer2Set5(scorePlayer2Set5);
         }
     }
-
+    /**
+     * This method checks if a player won the match and disable buttons.
+     * Orientation is locked when the match is over.
+     */
+    public void matchWon(){
+        if (setsWonPlayer1 == 3) {
+            int currentOrientation = getResources().getConfiguration().orientation;
+            if (currentOrientation == Configuration.ORIENTATION_LANDSCAPE) {
+                setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE);
+            }
+            else {
+                setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT);
+            }
+            Toast.makeText(this, pl1 + "  won the match!", Toast.LENGTH_LONG).show();
+            btnPointPlayer1.setEnabled(false);
+            btnPointPlayer2.setEnabled(false);
+            btnAcePlayer1.setEnabled(false);
+            btnAcePlayer2.setEnabled(false);
+            btnWinnerPlayer1.setEnabled(false);
+            btnWinnerPlayer2.setEnabled(false);
+            btnErrorPlayer1.setEnabled(false);
+            btnErrorPlayer2.setEnabled(false);
+        } else if (setsWonPlayer2 == 3) {
+            int currentOrientation = getResources().getConfiguration().orientation;
+            if (currentOrientation == Configuration.ORIENTATION_LANDSCAPE) {
+                setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE);
+            }
+            else {
+                setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT);
+            }
+            Toast.makeText(this, pl2 + "  won the match!", Toast.LENGTH_LONG).show();
+            btnPointPlayer1.setEnabled(false);
+            btnPointPlayer2.setEnabled(false);
+            btnAcePlayer1.setEnabled(false);
+            btnAcePlayer2.setEnabled(false);
+            btnWinnerPlayer1.setEnabled(false);
+            btnWinnerPlayer2.setEnabled(false);
+            btnErrorPlayer1.setEnabled(false);
+            btnErrorPlayer2.setEnabled(false);
+        }
+    }
     /**
      * These methods set the visibility to the current points type
      * Method ballPlayer change the ball to the player who is serving
@@ -921,37 +932,37 @@ public class FiveSetsActivity extends AppCompatActivity {
         TextView scoreView = (TextView) findViewById(R.id.set_5_score_player2);
         scoreView.setText(String.valueOf(score));
     }
-    public void displayPointsPlayer1(int pointsWonPlayer1) {
+    public void displayPointsPlayer1(int score) {
         TextView txtPointsPlayer1 = (TextView) findViewById(R.id.txt_points_player1);
-        txtPointsPlayer1.setText(String.valueOf(pointsWonPlayer1));
+        txtPointsPlayer1.setText(String.valueOf(score));
     }
     public void displayPointsPlayer2(int score) {
         TextView txtPointsPlayer2 = (TextView) findViewById(R.id.txt_points_player2);
-        txtPointsPlayer2.setText(String.valueOf(pointsWonPlayer2));
+        txtPointsPlayer2.setText(String.valueOf(score));
     }
     public void displayAcesPlayer1(int score) {
         TextView txtAcesPlayer1 = (TextView) findViewById(R.id.txt_aces_player1);
-        txtAcesPlayer1.setText(String.valueOf(acePlayer1));
+        txtAcesPlayer1.setText(String.valueOf(score));
     }
     public void displayAcesPlayer2(int score) {
         TextView txtAcesPlayer2 = (TextView) findViewById(R.id.txt_aces_player2);
-        txtAcesPlayer2.setText(String.valueOf(acePlayer2));
+        txtAcesPlayer2.setText(String.valueOf(score));
     }
     public void displayWinnersPlayer1(int score) {
         TextView txtWinnersPlayer1 = (TextView) findViewById(R.id.txt_winners_player1);
-        txtWinnersPlayer1.setText(String.valueOf(winPlayer1));
+        txtWinnersPlayer1.setText(String.valueOf(score));
     }
     public void displayWinnersPlayer2(int score) {
         TextView txtWinnersPlayer2 = (TextView) findViewById(R.id.txt_winners_player2);
-        txtWinnersPlayer2.setText(String.valueOf(winPlayer2));
+        txtWinnersPlayer2.setText(String.valueOf(score));
     }
     public void displayErrorsPlayer1(int score) {
         TextView txtErrorsPlayer1 = (TextView) findViewById(R.id.txt_errors_player1);
-        txtErrorsPlayer1.setText(String.valueOf(errPlayer1));
+        txtErrorsPlayer1.setText(String.valueOf(score));
     }
     public void displayErrorsPlayer2(int score) {
         TextView txtErrorsPlayer2 = (TextView) findViewById(R.id.txt_errors_player2);
-        txtErrorsPlayer2.setText(String.valueOf(errPlayer2));
+        txtErrorsPlayer2.setText(String.valueOf(score));
     }
     public void displayTiePlayer1Set1(int score) {
         tieSet1Player1.setText(String.valueOf(score));
@@ -1031,6 +1042,8 @@ public class FiveSetsActivity extends AppCompatActivity {
         winPlayer2 = 0;
         errPlayer1 = 0;
         errPlayer2 = 0;
+        setsWonPlayer1 = 0;
+        setsWonPlayer2 = 0;
         displayForPlayer1(scorePlayer1);
         displayForPlayer2(scorePlayer2);
         displayAdvantage1(Advantage1);
@@ -1057,6 +1070,14 @@ public class FiveSetsActivity extends AppCompatActivity {
         displayErrorsPlayer2(errPlayer2);
         tieSetsInvisible();
         setsVisible();
+        btnPointPlayer1.setEnabled(true);
+        btnPointPlayer2.setEnabled(true);
+        btnAcePlayer1.setEnabled(true);
+        btnAcePlayer2.setEnabled(true);
+        btnWinnerPlayer1.setEnabled(true);
+        btnWinnerPlayer2.setEnabled(true);
+        btnErrorPlayer1.setEnabled(true);
+        btnErrorPlayer2.setEnabled(true);
     }
 
 

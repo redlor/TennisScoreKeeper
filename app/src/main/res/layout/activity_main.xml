@@ -21,7 +21,7 @@
 
         <android.support.v7.widget.CardView
             style="@style/card"
-            app:cardBackgroundColor="@color/cardBackground"
+            app:cardBackgroundColor="@color/lightBlue"
             app:cardUseCompatPadding="true">
 
             <TextView
@@ -32,7 +32,7 @@
 
         <android.support.v7.widget.CardView
             style="@style/card"
-            app:cardBackgroundColor="@color/cardBackground"
+            app:cardBackgroundColor="@color/lightBlue"
             app:cardUseCompatPadding="true">
 
             <RelativeLayout style="@style/relative_layout_set_point">
@@ -52,7 +52,7 @@
 
         <android.support.v7.widget.CardView
             style="@style/card"
-            app:cardBackgroundColor="@color/cardBackground"
+            app:cardBackgroundColor="@color/lightBlue"
             app:cardUseCompatPadding="true">
 
             <RelativeLayout style="@style/relative_layout_set_point">
@@ -71,7 +71,7 @@
         <android.support.v7.widget.CardView
             android:id="@+id/card_3_set_player1"
             style="@style/card"
-            app:cardBackgroundColor="@color/cardBackground"
+            app:cardBackgroundColor="@color/lightBlue"
             app:cardUseCompatPadding="true">
 
             <RelativeLayout style="@style/relative_layout_set_point">
@@ -90,7 +90,7 @@
         <android.support.v7.widget.CardView
             android:id="@+id/card_4_set_player1"
             style="@style/card"
-            app:cardBackgroundColor="@color/cardBackground"
+            app:cardBackgroundColor="@color/lightBlue"
             app:cardUseCompatPadding="true">
 
             <RelativeLayout style="@style/relative_layout_set_point">
@@ -109,7 +109,7 @@
         <android.support.v7.widget.CardView
             android:id="@+id/card_5_set_player1"
             style="@style/card"
-            app:cardBackgroundColor="@color/cardBackground"
+            app:cardBackgroundColor="@color/lightBlue"
             app:cardUseCompatPadding="true">
 
             <RelativeLayout style="@style/relative_layout_set_point">
@@ -128,7 +128,7 @@
         <android.support.v7.widget.CardView
             android:id="@+id/card_point_player1"
             style="@style/card_big_score"
-            app:cardBackgroundColor="@color/cardBackground"
+            app:cardBackgroundColor="@color/lightBlue"
             app:cardUseCompatPadding="true">
 
             <RelativeLayout
@@ -172,7 +172,7 @@
 
         <android.support.v7.widget.CardView
             style="@style/card"
-            app:cardBackgroundColor="@color/cardBackground"
+            app:cardBackgroundColor="@color/lightBlue"
             app:cardUseCompatPadding="true">
 
             <TextView
@@ -183,7 +183,7 @@
 
         <android.support.v7.widget.CardView
             style="@style/card"
-            app:cardBackgroundColor="@color/cardBackground"
+            app:cardBackgroundColor="@color/lightBlue"
             app:cardUseCompatPadding="true">
 
             <RelativeLayout style="@style/relative_layout_set_point">
@@ -204,7 +204,7 @@
 
         <android.support.v7.widget.CardView
             style="@style/card"
-            app:cardBackgroundColor="@color/cardBackground"
+            app:cardBackgroundColor="@color/lightBlue"
             app:cardUseCompatPadding="true">
 
             <RelativeLayout style="@style/relative_layout_set_point">
@@ -223,7 +223,7 @@
         <android.support.v7.widget.CardView
             android:id="@+id/card_3_set_player2"
             style="@style/card"
-            app:cardBackgroundColor="@color/cardBackground"
+            app:cardBackgroundColor="@color/lightBlue"
             app:cardUseCompatPadding="true">
 
             <RelativeLayout style="@style/relative_layout_set_point">
@@ -242,7 +242,7 @@
         <android.support.v7.widget.CardView
             android:id="@+id/card_4_set_player2"
             style="@style/card"
-            app:cardBackgroundColor="@color/cardBackground"
+            app:cardBackgroundColor="@color/lightBlue"
             app:cardUseCompatPadding="true">
 
             <RelativeLayout style="@style/relative_layout_set_point">
@@ -261,7 +261,7 @@
         <android.support.v7.widget.CardView
             android:id="@+id/card_5_set_player2"
             style="@style/card"
-            app:cardBackgroundColor="@color/cardBackground"
+            app:cardBackgroundColor="@color/lightBlue"
             app:cardUseCompatPadding="true">
 
             <RelativeLayout style="@style/relative_layout_set_point">
@@ -280,7 +280,7 @@
         <android.support.v7.widget.CardView
             android:id="@+id/card_point_player2"
             style="@style/card_big_score"
-            app:cardBackgroundColor="@color/cardBackground"
+            app:cardBackgroundColor="@color/lightBlue"
             app:cardUseCompatPadding="true">
 
             <RelativeLayout
@@ -337,21 +337,25 @@
                     android:text="@string/player1_name" />
 
                 <Button
+                    android:id="@+id/btn_point_player1"
                     style="@style/square_button"
                     android:onClick="addFifteenForPlayer1"
                     android:text="@string/fifteen_button" />
 
                 <Button
+                    android:id="@+id/btn_ace_player1"
                     style="@style/square_button"
                     android:onClick="aceForPlayer1"
                     android:text="@string/ace_button" />
 
                 <Button
+                    android:id="@+id/btn_winner_player1"
                     style="@style/square_button"
                     android:onClick="winnerPlayer1"
                     android:text="@string/winner_button" />
 
                 <Button
+                    android:id="@+id/btn_error_player1"
                     style="@style/square_button"
                     android:onClick="errorPlayer1"
                     android:text="@string/error_button" />
@@ -371,33 +375,28 @@
                     android:text="@string/player2_name" />
 
                 <Button
+                    android:id="@+id/btn_point_player2"
                     style="@style/square_button"
                     android:onClick="addFifteenForPlayer2"
                     android:text="@string/fifteen_button" />
 
                 <Button
+                    android:id="@+id/btn_ace_player2"
                     style="@style/square_button"
                     android:onClick="aceForPlayer2"
                     android:text="@string/ace_button" />
 
                 <Button
+                    android:id="@+id/btn_winner_player2"
                     style="@style/square_button"
                     android:onClick="winnerPlayer2"
                     android:text="@string/winner_button" />
 
                 <Button
+                    android:id="@+id/btn_error_player2"
                     style="@style/square_button"
                     android:onClick="errorPlayer2"
                     android:text="@string/error_button" />
-                <!--  <Button
-                      style="@style/Button"
-                      android:onClick="AdvForPlayer2"
-                      android:text="@string/advantage_button" />
-
-                  <Button
-                      style="@style/Button"
-                      android:onClick="tiePlayer2"
-                      android:text="@string/tie_player2" />-->
 
             </LinearLayout>
 

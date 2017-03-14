@@ -18,6 +18,7 @@ public class StatsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stats);
         Bundle extras = getIntent().getExtras();
+        int set1Pl1 = extras.getInt("scorePlayer1Set1");
         int pointsPL1 = extras.getInt("points_won_player1");
         int pointsPL2 = extras.getInt("points_won_player2");
         int acePL1 = extras.getInt("ace_player1");
@@ -34,6 +35,8 @@ public class StatsActivity extends AppCompatActivity {
         TextView txtPlayer2 = (TextView) findViewById(R.id.player2_stats);
         txtPlayer2.setText(pl2);
 
+        TextView txtSet1Player1 = (TextView) findViewById(R.id.set_1_score_player1);
+        txtSet1Player1.setText((String.valueOf(set1Pl1)));
         TextView txtPointsPlayer1 = (TextView) findViewById(R.id.txt_points_player1);
         txtPointsPlayer1.setText(String.valueOf(pointsPL1));
         TextView txtPointsPlayer2 = (TextView) findViewById(R.id.txt_points_player2);
