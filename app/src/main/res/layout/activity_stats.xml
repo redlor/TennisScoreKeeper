@@ -249,7 +249,7 @@
 
             <TextView
                 android:id="@+id/player1_stats"
-                style="@style/PlText"
+                style="@style/summaryText"
                 android:text="@string/player1_name" />
 
             <RelativeLayout
@@ -257,7 +257,7 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    style="@style/PlText"
+                    style="@style/summaryText"
                     android:text="@string/points_won_txt" />
 
                 <TextView
@@ -271,7 +271,7 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    style="@style/PlText"
+                    style="@style/summaryText"
                     android:text="@string/ace_txt" />
 
                 <TextView
@@ -285,7 +285,7 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    style="@style/PlText"
+                    style="@style/summaryText"
                     android:text="@string/winner_txt" />
 
                 <TextView
@@ -299,7 +299,7 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    style="@style/PlText"
+                    style="@style/summaryText"
                     android:text="@string/error_txt" />
 
                 <TextView
@@ -324,7 +324,7 @@
 
             <TextView
                 android:id="@+id/player2_stats"
-                style="@style/PlText"
+                style="@style/summaryText"
                 android:text="@string/player2_name" />
 
             <RelativeLayout
@@ -332,7 +332,7 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    style="@style/PlText"
+                    style="@style/summaryText"
                     android:text="@string/points_won_txt" />
 
                 <TextView
@@ -346,7 +346,7 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    style="@style/PlText"
+                    style="@style/summaryText"
                     android:text="@string/ace_txt" />
 
                 <TextView
@@ -360,7 +360,7 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    style="@style/PlText"
+                    style="@style/summaryText"
                     android:text="@string/winner_txt" />
 
                 <TextView
@@ -374,7 +374,7 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    style="@style/PlText"
+                    style="@style/summaryText"
                     android:text="@string/error_txt" />
 
                 <TextView
@@ -394,15 +394,13 @@
         <TextView
             style="@style/PlText"
             android:layout_gravity="center"
-            android:text="@string/txt_back_to_match"
-            android:textColor="@color/backgroundColor" />
+            android:text="@string/txt_back_to_match" />
 
         <Button
             android:id="@+id/btn_go_to_main_menu"
-            style="@style/button"
+            style="@style/resetButton"
+            android:layout_gravity="center_horizontal"
             android:background="@drawable/tennisball"
-            android:scaleX="0.5"
-            android:scaleY="0.5"
             android:text="@string/main_menu_button" />
     </LinearLayout>
 </LinearLayout>

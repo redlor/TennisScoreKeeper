@@ -138,8 +138,7 @@
 
                 <TextView
                     android:id="@+id/player_1_score"
-                    style="@style/GameScoreText"
-                    android:textColor="@color/textColorScore" />
+                    style="@style/GameScoreText" />
 
                 <TextView
                     android:id="@+id/player_1_score_tie"
@@ -290,8 +289,7 @@
 
                 <TextView
                     android:id="@+id/player_2_score"
-                    style="@style/GameScoreText"
-                    android:textColor="@color/textColorScore" />
+                    style="@style/GameScoreText" />
 
                 <TextView
                     android:id="@+id/player_2_score_tie"
@@ -300,7 +298,10 @@
 
                 <TextView
                     android:id="@+id/advantage2"
-                    style="@style/AdvText" />
+                    style="@style/AdvText"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignTop="@+id/player_2_score" />
 
             </RelativeLayout>
         </android.support.v7.widget.CardView>

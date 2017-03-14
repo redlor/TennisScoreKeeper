@@ -81,7 +81,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:fontFamily">sans-serif-medium</item>
         <item name="android:text">@string/score</item>
-        <item name="android:textColor">@color/textColorScore</item>
+        <item name="android:textColor">@color/textColor</item>
         <item name="android:textSize">@dimen/textSizeMedium</item>
     </style>
     <style name="tieScoreText">
@@ -99,6 +99,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_centerInParent">true</item>
         <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:textColor">@color/textColor</item>
         <item name="android:text">@string/score</item>
         <item name="android:textSize">@dimen/textSizeScore</item>
         <item name="android:textAlignment">center</item>
@@ -108,7 +109,7 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:fontFamily">sans-serif-medium</item>
-        <item name="android:textColor">@color/textColorAdv</item>
+        <item name="android:textColor">@color/textColor</item>
         <item name="android:textSize">@dimen/textSizeScore</item>
         <item name="android:textAlignment">center</item>
     </style>
@@ -126,14 +127,15 @@
     <style name="square_button">
         <item name="android:layout_width">100dp</item>
         <item name="android:layout_height">60dp</item>
-        <item name="android:textColor">#64FFDA</item>
+        <item name="android:textColor">@color/lightBlue</item>
     </style>
 
     <style name="resetButton">
         <item name="android:layout_width">100dp</item>
         <item name="android:layout_height">100dp</item>
         <item name="android:textSize">@dimen/textSizeSmall</item>
-        <item name="android:textColor">#64FFDA</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/lightBlue</item>
     </style>
 
     <style name="SetNumberText">
@@ -157,7 +159,15 @@
         <item name="android:textColor">@color/textColor</item>
         <item name="android:textSize">@dimen/textSizeMedium</item>
     </style>
-
+    <style name="summaryText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:padding">@dimen/smallPadding</item>
+        <item name="android:textColor">@color/backgroundColor</item>
+        <item name="android:textSize">@dimen/textSizeMedium</item>
+    </style>
     <style name="invisible_textview">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">0dp</item>

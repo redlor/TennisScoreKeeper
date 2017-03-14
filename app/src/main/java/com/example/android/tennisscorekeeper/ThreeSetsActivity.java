@@ -293,6 +293,20 @@ public class ThreeSetsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent statsIntent = new Intent(ThreeSetsActivity.this, StatsActivity.class);
+                Boolean threeSets = true;
+                statsIntent.putExtra("threeSets", threeSets);
+                statsIntent.putExtra("scorePlayer1Set1", scorePlayer1Set1);
+                statsIntent.putExtra("scorePlayer1Set2", scorePlayer1Set2);
+                statsIntent.putExtra("scorePlayer1Set3", scorePlayer1Set3);
+                statsIntent.putExtra("scorePlayer2Set1", scorePlayer2Set1);
+                statsIntent.putExtra("scorePlayer2Set2", scorePlayer2Set2);
+                statsIntent.putExtra("scorePlayer2Set3", scorePlayer2Set3);
+                statsIntent.putExtra("player1TieSet1", player1TieSet1);
+                statsIntent.putExtra("player1TieSet2", player1TieSet2);
+                statsIntent.putExtra("player1TieSet3", player1TieSet3);
+                statsIntent.putExtra("player2TieSet1", player2TieSet1);
+                statsIntent.putExtra("player2TieSet2", player2TieSet2);
+                statsIntent.putExtra("player2TieSet3", player2TieSet3);
                 statsIntent.putExtra("points_won_player1", pointsWonPlayer1);
                 statsIntent.putExtra("points_won_player2", pointsWonPlayer2);
                 statsIntent.putExtra("ace_player1", acePlayer1);

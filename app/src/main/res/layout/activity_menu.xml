@@ -129,7 +129,8 @@
         </RadioGroup>
         <Button
             android:id="@+id/btn_go_to_match"
-            style="@style/button"
+            style="@style/resetButton"
+            android:layout_gravity="center_horizontal"
             android:background="@drawable/smallball"
             android:text="@string/btn_enter_button" />
     </LinearLayout>
