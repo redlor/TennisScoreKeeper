@@ -5,6 +5,9 @@
     <string name="btn_enter_button">Start</string>
     <string name="lbl_3sets">3 Sets Match</string>
     <string name="lbl_5sets">5 Sets Match</string>
+    <string name="lbl_tie_break_last_set">Tie-Break Last Set:</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
     <string name="player1_name">Player1</string>
     <string name="player2_name">Player2</string>
     <string name="lbl_serve">Serve</string>

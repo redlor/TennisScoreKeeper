@@ -55,6 +55,10 @@ public class StatsActivity extends AppCompatActivity {
         txtPlayer1.setText(pl1);
         TextView txtPlayer2 = (TextView) findViewById(R.id.player2_stats);
         txtPlayer2.setText(pl2);
+        TextView txtPlayer1Card = (TextView) findViewById(R.id.player_top_1);
+        txtPlayer1Card.setText(pl1);
+        TextView txtPlayer2Card = (TextView) findViewById(R.id.player_top_2);
+        txtPlayer2Card.setText(pl2);
 
         TextView txtSet1Player1 = (TextView) findViewById(R.id.set_1_score_player1);
         txtSet1Player1.setText((String.valueOf(set1Pl1)));

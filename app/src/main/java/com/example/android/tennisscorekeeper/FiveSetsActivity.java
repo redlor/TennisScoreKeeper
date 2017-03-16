@@ -22,6 +22,8 @@ public class FiveSetsActivity extends AppCompatActivity {
 
     String pl1, pl2;
 
+    boolean tieTrue;
+
     int scorePlayer1Set1 = 0;
     int scorePlayer1Set2 = 0;
     int scorePlayer1Set3 = 0;
@@ -296,6 +298,9 @@ public class FiveSetsActivity extends AppCompatActivity {
             ballPlayer2.setVisibility(View.VISIBLE);
         }
 
+        tieTrue = getIntent().getExtras().getBoolean("tieBreakCheck");
+        System.out.println(tieTrue);
+
         tieSet1Player1 = (TextView) findViewById(R.id.set_1_tie_player1);
         tieSet2Player1 = (TextView) findViewById(R.id.set_2_tie_player1);
         tieSet3Player1 = (TextView) findViewById(R.id.set_3_tie_player1);
@@ -410,7 +415,7 @@ public class FiveSetsActivity extends AppCompatActivity {
      */
     public void addFifteenForPlayer1(View view) {
         if ((scorePlayer1Set1 == 6 & scorePlayer2Set1 == 6) | (scorePlayer1Set2 == 6 & scorePlayer2Set2 == 6) | (scorePlayer1Set3 == 6 & scorePlayer2Set3 == 6)
-                | (scorePlayer1Set4 == 6 & scorePlayer2Set4 == 6) | (scorePlayer1Set5 == 6 & scorePlayer2Set5 == 6)) {
+                | (scorePlayer1Set4 == 6 & scorePlayer2Set4 == 6) | ((scorePlayer1Set5 == 6 & scorePlayer2Set5 == 6) & tieTrue)) {
             tiePlayer1();
             game();
         } else if (scorePlayer1 < 30) {
@@ -443,7 +448,7 @@ public class FiveSetsActivity extends AppCompatActivity {
 
     public void addFifteenForPlayer2(View view) {
         if ((scorePlayer1Set1 == 6 & scorePlayer2Set1 == 6) | (scorePlayer1Set2 == 6 & scorePlayer2Set2 == 6) | (scorePlayer1Set3 == 6 & scorePlayer2Set3 == 6)
-                | (scorePlayer1Set4 == 6 & scorePlayer2Set4 == 6) | (scorePlayer1Set5 == 6 & scorePlayer2Set5 == 6)) {
+                | (scorePlayer1Set4 == 6 & scorePlayer2Set4 == 6) | ((scorePlayer1Set5 == 6 & scorePlayer2Set5 == 6) & tieTrue)) {
             tiePlayer2();
             game();
         } else if (scorePlayer2 < 30) {
@@ -581,10 +586,10 @@ public class FiveSetsActivity extends AppCompatActivity {
             tie1 = 0;
             tie2 = 0;
         }
-        if ((scorePlayer1Set5 == 6 & scorePlayer2Set5 == 6)) {
+        if ((scorePlayer1Set5 == 6 & scorePlayer2Set5 == 6) & tieTrue) {
             player1TieSet5 = tie1;
             player2TieSet5 = tie2;
-        } else if ((scorePlayer1Set5 == 7 & scorePlayer2Set5 == 6) | (scorePlayer1Set5 == 6 & scorePlayer2Set5 == 7)) {
+        } else if (tieTrue & ((scorePlayer1Set5 == 7 & scorePlayer2Set5 == 6) | (scorePlayer1Set5 == 6 & scorePlayer2Set5 == 7))) {
             tieSet5Player1.setVisibility(View.VISIBLE);
             tieSet5Player2.setVisibility(View.VISIBLE);
             displayTiePlayer1Set5(player1TieSet5);
@@ -720,12 +725,23 @@ public class FiveSetsActivity extends AppCompatActivity {
             scorePlayer2Set5 = scorePlayer2Set5 + 1;
             resetGame();
         }
-        if ((scorePlayer1Set5 > scorePlayer2Set5) & ((scorePlayer1Set5 >= 6 & scorePlayer2Set5 < 5) | (scorePlayer1Set5 == 7 & scorePlayer2Set5 >= 5))) {
-            setsWonPlayer1 = setsWonPlayer1 + 1;
-        } else if ((scorePlayer2Set5 > scorePlayer1Set5) & ((scorePlayer2Set5 >= 6 & scorePlayer1Set5 < 5) | (scorePlayer2Set5 == 7 & scorePlayer1Set5 >= 5))) {
-            setsWonPlayer2 = setsWonPlayer2 + 1;
+        if (tieTrue) {
+            if ((scorePlayer1Set5 > scorePlayer2Set5) & ((scorePlayer1Set5 >= 6 & scorePlayer2Set5 < 5) | (scorePlayer1Set5 == 7 & scorePlayer2Set5 >= 5))) {
+                setsWonPlayer1 = setsWonPlayer1 + 1;
+            } else if ((scorePlayer2Set5 > scorePlayer1Set5) & ((scorePlayer2Set5 >= 6 & scorePlayer1Set5 < 5) | (scorePlayer2Set5 == 7 & scorePlayer1Set5 >= 5))) {
+                setsWonPlayer2 = setsWonPlayer2 + 1;
+            }
+            matchWon();
         }
-        matchWon();
+        else if (!(tieTrue)) {
+            if ((scorePlayer1Set5 - scorePlayer2Set5 == 2) & (scorePlayer1Set5 >= 6 & scorePlayer2Set5 >= 6)){
+                setsWonPlayer1 = setsWonPlayer1 + 1;
+            }
+            else if ((scorePlayer2Set5 - scorePlayer1Set5 == 2) &(scorePlayer1Set5 >= 6 & scorePlayer2Set5 >= 6)){
+                setsWonPlayer2 = setsWonPlayer2 + 1;
+            }
+            matchWon();
+        }
     }
 
     /**
@@ -754,7 +770,7 @@ public class FiveSetsActivity extends AppCompatActivity {
             displayGamesPlayer1Set4(scorePlayer1Set4);
             displayGamesPlayer2Set4(scorePlayer2Set4);
         } else if ((scorePlayer1Set4 >= 6 | scorePlayer2Set4 >= 6) & (scorePlayer1Set5 < 6 & scorePlayer2Set5 < 6) | (scorePlayer1Set5 == 6 & scorePlayer2Set5 == 5)
-                | (scorePlayer1Set5 == 5 & scorePlayer2Set5 == 6) | (scorePlayer1Set5 == 6 & scorePlayer2Set5 == 6)) {
+                | (scorePlayer1Set5 == 5 & scorePlayer2Set5 == 6) | (scorePlayer1Set5 >= 6 & scorePlayer2Set5 >= 6)) {
             comparePointsSet5();
             displayGamesPlayer1Set5(scorePlayer1Set5);
             displayGamesPlayer2Set5(scorePlayer2Set5);

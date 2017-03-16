@@ -2,6 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:background="@color/lightBlue"
     android:orientation="vertical">
 
     <LinearLayout
@@ -23,14 +24,6 @@
             android:layout_marginBottom="@dimen/activity_vertical_margin"
             android:src="@drawable/tennisracket" />
 
-        <TextView
-            style="@style/title"
-            android:layout_gravity="right"
-            android:layout_marginRight="@dimen/bigMargin"
-            android:text="@string/lbl_serve"
-            android:textColor="@color/textColor"
-            android:textSize="@dimen/textSizeMedium" />
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -46,10 +39,10 @@
                     android:layout_height="wrap_content">
 
                     <TextView
+                        android:id="@+id/textView"
                         style="@style/title"
                         android:layout_marginRight="@dimen/smallMargin"
                         android:text="@string/player1_name"
-                        android:textColor="@color/textColor"
                         android:textSize="@dimen/textSizeMedium" />
 
                     <EditText
@@ -66,7 +59,6 @@
                         style="@style/title"
                         android:layout_marginRight="@dimen/smallMargin"
                         android:text="@string/player2_name"
-                        android:textColor="@color/textColor"
                         android:textSize="@dimen/textSizeMedium" />
 
                     <EditText
@@ -74,12 +66,17 @@
                         style="@style/edit_text" />
                 </LinearLayout>
             </LinearLayout>
-
+            <TextView
+                style="@style/title"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_marginLeft="@dimen/bigMargin"
+                android:text="@string/lbl_serve"
+                android:textSize="@dimen/textSizeMedium" />
             <RadioGroup
                 android:layout_width="fill_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="right"
-                android:layout_marginRight="@dimen/sideMargin"
                 android:orientation="vertical">
 
                 <RadioButton
@@ -92,6 +89,7 @@
                     android:id="@+id/radio_button_serve_pl2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/smallMargin"
                     android:layout_gravity="right" />
 
             </RadioGroup>
@@ -127,6 +125,37 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="@dimen/smallPadding" />
         </RadioGroup>
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                style="@style/title"
+                android:text="@string/lbl_tie_break_last_set"
+                android:textSize="@dimen/textSizeMedium"
+                android:layout_marginRight="@dimen/smallMargin"/>
+            <TextView
+                style="@style/title"
+                android:text="@string/yes"
+                android:textSize="@dimen/textSizeMedium" />
+
+            <RadioButton
+                android:id="@+id/tieBreakYes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/smallPadding" />
+            <TextView
+                style="@style/title"
+                android:text="@string/no"
+                android:textSize="@dimen/textSizeMedium" />
+
+            <RadioButton
+                android:id="@+id/tieBreakNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/smallPadding" />
+        </RadioGroup>
+
         <Button
             android:id="@+id/btn_go_to_match"
             style="@style/resetButton"

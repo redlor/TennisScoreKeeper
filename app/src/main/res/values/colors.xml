@@ -10,6 +10,6 @@
     <color name="backgroundColor">#FFFFFF</color>
     <color name="editBackgroundColor">#E0E0E0</color>
     <color name="tieBreakColor">#F44336</color>
-    <color name="orangeLight">#FFE0B2</color>
-    <color name="lightBlue">#90CAF9</color>
+    <color name="lightGreen">#26C6DA</color>
+    <color name="lightBlue">#BBDEFB</color>
 </resources>
