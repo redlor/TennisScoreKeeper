@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/lightGreen"
+    android:alpha="0.7"
+    android:orientation="vertical">
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:alpha="0.7"
-    android:background="@color/lightGreen"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     android:paddingTop="@dimen/bigMargin">
 
@@ -409,3 +414,4 @@
             android:text="@string/main_menu_button" />
     </LinearLayout>
 </LinearLayout>
+    </ScrollView>

@@ -59,96 +59,132 @@ public class FiveSetsActivity extends AppCompatActivity {
     int acePlayer2 = 0;
 
     private TextView invPlayer1, invPlayer2, invADvPlayer1, invAdvPlayer2;
-    private TextView txtPl1, txtPl2;
     private TextView invTiePlayer1, invTiePlayer2;
     private TextView tieSet1Player1, tieSet2Player1, tieSet3Player1, tieSet4Player1, tieSet5Player1, tieSet1Player2, tieSet2Player2, tieSet3Player2, tieSet4Player2, tieSet5Player2;
     private ImageView ballPlayer1, ballPlayer2;
     private boolean ball1, ball2;
-    private TextView txtSet1Pl1, txtSet2Pl1, txtSet3Pl1, txtSet4Pl1, txtSet5Pl1, txtSet1Pl2, txtSet2Pl2, txtSet3Pl2, txtSet4Pl2, txtSet5Pl2;
+//    private TextView txtSet1Pl1, txtSet2Pl1, txtSet3Pl1, txtSet4Pl1, txtSet5Pl1, txtSet1Pl2, txtSet2Pl2, txtSet3Pl2, txtSet4Pl2, txtSet5Pl2;
     private CardView cardSet4Pl1, cardSet4Pl2, cardSet5Pl1, cardSet5Pl2, cardPointsPl1, cardPointsPl2;
     private Button btnPointPlayer1, btnPointPlayer2, btnAcePlayer1, btnAcePlayer2, btnWinnerPlayer1, btnWinnerPlayer2, btnErrorPlayer1, btnErrorPlayer2;
+
+    static final String SCORE_PLAYER1_SET1_SAVED = "scorePlayer1Set1";
+    static final String SCORE_PLAYER1_SET2_SAVED = "scorePlayer1Set2";
+    static final String SCORE_PLAYER1_SET3_SAVED = "scorePlayer1Set3";
+    static final String SCORE_PLAYER1_SET4_SAVED = "scorePlayer1Set4";
+    static final String SCORE_PLAYER1_SET5_SAVED = "scorePlayer1Set5";
+    static final String SCORE_PLAYER2_SET1_SAVED = "scorePlayer2Set1";
+    static final String SCORE_PLAYER2_SET2_SAVED = "scorePlayer2Set2";
+    static final String SCORE_PLAYER2_SET3_SAVED = "scorePlayer2Set3";
+    static final String SCORE_PLAYER2_SET4_SAVED = "scorePlayer2Set4";
+    static final String SCORE_PLAYER2_SET5_SAVED = "scorePlayer2Set5";
+    static final String SCORE_PLAYER1_SAVED = "scorePlayer1";
+    static final String SCORE_PLAYER2_SAVED = "scorePlayer2";
+    static final String TIE1_SAVED = "tie1";
+    static final String TIE2_SAVED = "tie2";
+    static final String ADVANTAGE1_SAVED = "Advantage1";
+    static final String ADVANTAGE2_SAVED = "Advantage2";
+    static final String TIE_PLAYER1_SET1_SAVED = "player1TieSet1";
+    static final String TIE_PLAYER1_SET2_SAVED = "player1TieSet2";
+    static final String TIE_PLAYER1_SET3_SAVED = "player1TieSet3";
+    static final String TIE_PLAYER1_SET4_SAVED = "player1TieSet4";
+    static final String TIE_PLAYER1_SET5_SAVED = "player1TieSet5";
+    static final String TIE_PLAYER2_SET1_SAVED = "player2TieSet1";
+    static final String TIE_PLAYER2_SET2_SAVED = "player2TieSet2";
+    static final String TIE_PLAYER2_SET3_SAVED = "player2TieSet3";
+    static final String TIE_PLAYER2_SET4_SAVED = "player2TieSet4";
+    static final String TIE_PLAYER2_SET5_SAVED = "player2TieSet5";
+    static final String POINTS_WON_PLAYER1_SAVED = "pointsWonPlayer1";
+    static final String POINTS_WON_PLAYER2_SAVED = "pointsWonPlayer2";
+    static final String ACE_PLAYER1_SAVED = "acePlayer1";
+    static final String ACE_PLAYER2_SAVED = "acePlayer2";
+    static final String WIN_PLAYER1_SAVED = "winPlayer1";
+    static final String WIN_PLAYER2_SAVED = "winPlayer2";
+    static final String ERR_PLAYER1_SAVED = "errPlayer1";
+    static final String ERR_PLAYER2_SAVED = "errPlayer2";
+    static final String SETS_WON_PLAYER1_SAVED = "setsWonPlayer1";
+    static final String SETS_WON_PLAYER2_SAVED = "setsWonPlayer2";
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {               // save variable to temporary variable
         super.onSaveInstanceState(outState);
-        outState.putInt("scorePlayer1Set1", scorePlayer1Set1);
-        outState.putInt("scorePlayer1Set2", scorePlayer1Set2);
-        outState.putInt("scorePlayer1Set3", scorePlayer1Set3);
-        outState.putInt("scorePlayer1Set4", scorePlayer1Set4);
-        outState.putInt("scorePlayer1Set5", scorePlayer1Set5);
-        outState.putInt("scorePlayer2Set1", scorePlayer2Set1);
-        outState.putInt("scorePlayer2Set2", scorePlayer2Set2);
-        outState.putInt("scorePlayer2Set3", scorePlayer2Set3);
-        outState.putInt("scorePlayer2Set4", scorePlayer2Set4);
-        outState.putInt("scorePlayer2Set5", scorePlayer2Set5);
-        outState.putInt("scorePlayer1", scorePlayer1);
-        outState.putInt("scorePlayer2", scorePlayer2);
-        outState.putInt("tie1", tie1);
-        outState.putInt("tie2", tie2);
-        outState.putInt("player1TieSet1", player1TieSet1);
-        outState.putInt("player2TieSet1", player2TieSet1);
-        outState.putInt("player1TieSet2", player1TieSet2);
-        outState.putInt("player2TieSet2", player2TieSet2);
-        outState.putInt("player1TieSet3", player1TieSet3);
-        outState.putInt("player2TieSet3", player2TieSet3);
-        outState.putInt("player1TieSet4", player1TieSet4);
-        outState.putInt("player2TieSet4", player2TieSet4);
-        outState.putInt("player1TieSet5", player1TieSet5);
-        outState.putInt("player2TieSet5", player2TieSet5);
-        outState.putString("Advantage1", Advantage1);
-        outState.putString("Advantage2", Advantage2);
-        outState.putInt("pointsWonPlayer1", pointsWonPlayer1);
-        outState.putInt("pointsWonPlayer2", pointsWonPlayer2);
-        outState.putInt("acePlayer1", acePlayer1);
-        outState.putInt("acePlayer2", acePlayer2);
-        outState.putInt("winPlayer1", winPlayer1);
-        outState.putInt("winPlayer2", winPlayer2);
-        outState.putInt("errPlayer1", errPlayer1);
-        outState.putInt("errPlayer2", errPlayer2);
-        outState.putInt("setsWonPlayer1", setsWonPlayer1);
-        outState.putInt("setsWonPlayer2", setsWonPlayer2);
+        outState.putInt(SCORE_PLAYER1_SET1_SAVED, scorePlayer1Set1);
+        outState.putInt(SCORE_PLAYER1_SET2_SAVED, scorePlayer1Set2);
+        outState.putInt(SCORE_PLAYER1_SET3_SAVED, scorePlayer1Set3);
+        outState.putInt(SCORE_PLAYER1_SET4_SAVED, scorePlayer1Set4);
+        outState.putInt(SCORE_PLAYER1_SET5_SAVED, scorePlayer1Set5);
+        outState.putInt(SCORE_PLAYER2_SET1_SAVED, scorePlayer2Set1);
+        outState.putInt(SCORE_PLAYER2_SET2_SAVED, scorePlayer2Set2);
+        outState.putInt(SCORE_PLAYER2_SET3_SAVED, scorePlayer2Set3);
+        outState.putInt(SCORE_PLAYER2_SET4_SAVED, scorePlayer2Set4);
+        outState.putInt(SCORE_PLAYER2_SET5_SAVED, scorePlayer2Set5);
+        outState.putInt(SCORE_PLAYER1_SAVED, scorePlayer1);
+        outState.putInt(SCORE_PLAYER2_SAVED, scorePlayer2);
+        outState.putInt(TIE1_SAVED, tie1);
+        outState.putInt(TIE2_SAVED, tie2);
+        outState.putInt(TIE_PLAYER1_SET1_SAVED, player1TieSet1);
+        outState.putInt(TIE_PLAYER2_SET1_SAVED, player2TieSet1);
+        outState.putInt(TIE_PLAYER1_SET2_SAVED, player1TieSet2);
+        outState.putInt(TIE_PLAYER2_SET2_SAVED, player2TieSet2);
+        outState.putInt(TIE_PLAYER1_SET3_SAVED, player1TieSet3);
+        outState.putInt(TIE_PLAYER2_SET3_SAVED, player2TieSet3);
+        outState.putInt(TIE_PLAYER1_SET4_SAVED, player1TieSet4);
+        outState.putInt(TIE_PLAYER2_SET4_SAVED, player2TieSet4);
+        outState.putInt(TIE_PLAYER1_SET5_SAVED, player1TieSet5);
+        outState.putInt(TIE_PLAYER2_SET5_SAVED, player2TieSet5);
+        outState.putString(ADVANTAGE1_SAVED, Advantage1);
+        outState.putString(ADVANTAGE2_SAVED, Advantage2);
+        outState.putInt(POINTS_WON_PLAYER1_SAVED, pointsWonPlayer1);
+        outState.putInt(POINTS_WON_PLAYER2_SAVED, pointsWonPlayer2);
+        outState.putInt(ACE_PLAYER1_SAVED, acePlayer1);
+        outState.putInt(ACE_PLAYER2_SAVED, acePlayer2);
+        outState.putInt(WIN_PLAYER1_SAVED, winPlayer1);
+        outState.putInt(WIN_PLAYER2_SAVED, winPlayer2);
+        outState.putInt(ERR_PLAYER1_SAVED, errPlayer1);
+        outState.putInt(ERR_PLAYER2_SAVED, errPlayer2);
+        outState.putInt(SETS_WON_PLAYER1_SAVED, setsWonPlayer1);
+        outState.putInt(SETS_WON_PLAYER2_SAVED, setsWonPlayer2);
 
 
     }
 
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {       //restore value
-        scorePlayer1Set1 = savedInstanceState.getInt("scorePlayer1Set1");
-        scorePlayer1Set2 = savedInstanceState.getInt("scorePlayer1Set2");
-        scorePlayer1Set3 = savedInstanceState.getInt("scorePlayer1Set3");
-        scorePlayer1Set4 = savedInstanceState.getInt("scorePlayer1Set4");
-        scorePlayer1Set5 = savedInstanceState.getInt("scorePlayer1Set5");
-        scorePlayer2Set1 = savedInstanceState.getInt("scorePlayer2Set1");
-        scorePlayer2Set2 = savedInstanceState.getInt("scorePlayer2Set2");
-        scorePlayer2Set3 = savedInstanceState.getInt("scorePlayer2Set3");
-        scorePlayer2Set4 = savedInstanceState.getInt("scorePlayer2Set4");
-        scorePlayer2Set5 = savedInstanceState.getInt("scorePlayer2Set5");
-        scorePlayer1 = savedInstanceState.getInt("scorePlayer1");
-        scorePlayer2 = savedInstanceState.getInt("scorePlayer2");
-        Advantage1 = savedInstanceState.getString("Advantage1");
-        Advantage2 = savedInstanceState.getString("Advantage2");
-        tie1 = savedInstanceState.getInt("tie1");
-        tie2 = savedInstanceState.getInt("tie2");
-        player1TieSet1 = savedInstanceState.getInt("player1TieSet1");
-        player2TieSet1 = savedInstanceState.getInt("player2TieSet1");
-        player1TieSet2 = savedInstanceState.getInt("player1TieSet2");
-        player2TieSet2 = savedInstanceState.getInt("player2TieSet2");
-        player1TieSet3 = savedInstanceState.getInt("player1TieSet3");
-        player2TieSet3 = savedInstanceState.getInt("player2TieSet3");
-        player1TieSet4 = savedInstanceState.getInt("player1TieSet4");
-        player2TieSet4 = savedInstanceState.getInt("player2TieSet4");
-        player1TieSet5 = savedInstanceState.getInt("player1TieSet5");
-        player2TieSet5 = savedInstanceState.getInt("player2TieSet5");
-        pointsWonPlayer1 = savedInstanceState.getInt("pointsWonPlayer1");
-        pointsWonPlayer2 = savedInstanceState.getInt("pointsWonPlayer2");
-        acePlayer1 = savedInstanceState.getInt("acePlayer1");
-        acePlayer2 = savedInstanceState.getInt("acePlayer2");
-        winPlayer1 = savedInstanceState.getInt("winPlayer1");
-        winPlayer2 = savedInstanceState.getInt("winPlayer1");
-        errPlayer1 = savedInstanceState.getInt("errPlayer1");
-        errPlayer2 = savedInstanceState.getInt("errPlayer1");
-        setsWonPlayer1 = savedInstanceState.getInt("setsWonPlayer1");
-        setsWonPlayer2 = savedInstanceState.getInt("setsWonPlayer2");
+        scorePlayer1Set1 = savedInstanceState.getInt(SCORE_PLAYER1_SET1_SAVED);
+        scorePlayer1Set2 = savedInstanceState.getInt(SCORE_PLAYER1_SET2_SAVED);
+        scorePlayer1Set3 = savedInstanceState.getInt(SCORE_PLAYER1_SET3_SAVED);
+        scorePlayer1Set4 = savedInstanceState.getInt(SCORE_PLAYER1_SET4_SAVED);
+        scorePlayer1Set5 = savedInstanceState.getInt(SCORE_PLAYER1_SET5_SAVED);
+        scorePlayer2Set1 = savedInstanceState.getInt(SCORE_PLAYER2_SET1_SAVED);
+        scorePlayer2Set2 = savedInstanceState.getInt(SCORE_PLAYER2_SET2_SAVED);
+        scorePlayer2Set3 = savedInstanceState.getInt(SCORE_PLAYER2_SET3_SAVED);
+        scorePlayer2Set4 = savedInstanceState.getInt(SCORE_PLAYER2_SET4_SAVED);
+        scorePlayer2Set5 = savedInstanceState.getInt(SCORE_PLAYER2_SET5_SAVED);
+        scorePlayer1 = savedInstanceState.getInt(SCORE_PLAYER1_SAVED);
+        scorePlayer2 = savedInstanceState.getInt(SCORE_PLAYER2_SAVED);
+        Advantage1 = savedInstanceState.getString(ADVANTAGE1_SAVED);
+        Advantage2 = savedInstanceState.getString(ADVANTAGE2_SAVED);
+        tie1 = savedInstanceState.getInt(TIE1_SAVED);
+        tie2 = savedInstanceState.getInt(TIE2_SAVED);
+        player1TieSet1 = savedInstanceState.getInt(TIE_PLAYER1_SET1_SAVED);
+        player2TieSet1 = savedInstanceState.getInt(TIE_PLAYER2_SET1_SAVED);
+        player1TieSet2 = savedInstanceState.getInt(TIE_PLAYER1_SET2_SAVED);
+        player2TieSet2 = savedInstanceState.getInt(TIE_PLAYER2_SET2_SAVED);
+        player1TieSet3 = savedInstanceState.getInt(TIE_PLAYER1_SET3_SAVED);
+        player2TieSet3 = savedInstanceState.getInt(TIE_PLAYER2_SET3_SAVED);
+        player1TieSet4 = savedInstanceState.getInt(TIE_PLAYER1_SET4_SAVED);
+        player2TieSet4 = savedInstanceState.getInt(TIE_PLAYER2_SET4_SAVED);
+        player1TieSet5 = savedInstanceState.getInt(TIE_PLAYER1_SET5_SAVED);
+        player2TieSet5 = savedInstanceState.getInt(TIE_PLAYER2_SET5_SAVED);
+        pointsWonPlayer1 = savedInstanceState.getInt(POINTS_WON_PLAYER1_SAVED);
+        pointsWonPlayer2 = savedInstanceState.getInt(POINTS_WON_PLAYER2_SAVED);
+        acePlayer1 = savedInstanceState.getInt(ACE_PLAYER1_SAVED);
+        acePlayer2 = savedInstanceState.getInt(ACE_PLAYER2_SAVED);
+        winPlayer1 = savedInstanceState.getInt(WIN_PLAYER1_SAVED);
+        winPlayer2 = savedInstanceState.getInt(WIN_PLAYER2_SAVED);
+        errPlayer1 = savedInstanceState.getInt(ERR_PLAYER1_SAVED);
+        errPlayer2 = savedInstanceState.getInt(ERR_PLAYER2_SAVED);
+        setsWonPlayer1 = savedInstanceState.getInt(SETS_WON_PLAYER1_SAVED);
+        setsWonPlayer2 = savedInstanceState.getInt(SETS_WON_PLAYER2_SAVED);
 
         if (Advantage1.equals("AD") | Advantage2.equals("AD")) {
             advantageVisible();
@@ -164,31 +200,31 @@ public class FiveSetsActivity extends AppCompatActivity {
             displayForPlayer1(scorePlayer1);
             displayForPlayer2(scorePlayer2);
         }
-        if (player1TieSet1 > 0 | player2TieSet1 > 0) {
+        if ((player1TieSet1 > 0 | player2TieSet1 > 0) & (scorePlayer1Set1 > 6 | scorePlayer2Set1 > 6)) {
             tieSet1Player1.setVisibility(View.VISIBLE);
             tieSet1Player2.setVisibility(View.VISIBLE);
             displayTiePlayer1Set1(player1TieSet1);
             displayTiePlayer2Set1(player2TieSet1);
         }
-        if (player1TieSet2 > 0 | player2TieSet2 > 0) {
+        if ((player1TieSet2 > 0 | player2TieSet2 > 0) & (scorePlayer1Set2 > 6 | scorePlayer2Set2 > 6)) {
             tieSet2Player1.setVisibility(View.VISIBLE);
             tieSet2Player2.setVisibility(View.VISIBLE);
             displayTiePlayer1Set2(player1TieSet2);
             displayTiePlayer2Set2(player2TieSet2);
         }
-        if (player1TieSet3 > 0 | player2TieSet3 > 0) {
+        if ((player1TieSet3 > 0 | player2TieSet3 > 0) & (scorePlayer1Set3 > 6 | scorePlayer2Set3 > 6))  {
             tieSet3Player1.setVisibility(View.VISIBLE);
             tieSet3Player2.setVisibility(View.VISIBLE);
             displayTiePlayer1Set3(player1TieSet3);
             displayTiePlayer2Set3(player2TieSet3);
         }
-        if (player1TieSet4 > 0 | player2TieSet4 > 0) {
+        if ((player1TieSet4 > 0 | player2TieSet4 > 0) & (scorePlayer1Set4 > 6 | scorePlayer2Set4 > 6)) {
             tieSet4Player1.setVisibility(View.VISIBLE);
             tieSet4Player2.setVisibility(View.VISIBLE);
             displayTiePlayer1Set4(player1TieSet4);
             displayTiePlayer2Set4(player2TieSet4);
         }
-        if (player1TieSet5 > 0 | player2TieSet5 > 0) {
+        if ((player1TieSet5 > 0 | player2TieSet5 > 0) & (scorePlayer1Set5 > 6 | scorePlayer2Set5 > 6)) {
             tieSet5Player1.setVisibility(View.VISIBLE);
             tieSet5Player2.setVisibility(View.VISIBLE);
             displayTiePlayer1Set5(player1TieSet5);
@@ -219,42 +255,42 @@ public class FiveSetsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (savedInstanceState != null) {
-            scorePlayer1Set1 = savedInstanceState.getInt("scorePlayer1Set1");
-            scorePlayer1Set2 = savedInstanceState.getInt("scorePlayer1Set2");
-            scorePlayer1Set3 = savedInstanceState.getInt("scorePlayer1Set3");
-            scorePlayer1Set4 = savedInstanceState.getInt("scorePlayer1Set4");
-            scorePlayer1Set5 = savedInstanceState.getInt("scorePlayer1Set5");
-            scorePlayer2Set1 = savedInstanceState.getInt("scorePlayer2Set1");
-            scorePlayer2Set2 = savedInstanceState.getInt("scorePlayer2Set2");
-            scorePlayer2Set3 = savedInstanceState.getInt("scorePlayer2Set3");
-            scorePlayer2Set4 = savedInstanceState.getInt("scorePlayer2Set4");
-            scorePlayer2Set5 = savedInstanceState.getInt("scorePlayer2Set5");
-            scorePlayer1 = savedInstanceState.getInt("scorePlayer1");
-            scorePlayer2 = savedInstanceState.getInt("scorePlayer2");
-            Advantage1 = savedInstanceState.getString("Advantage1");
-            Advantage2 = savedInstanceState.getString("Advantage2");
-            tie1 = savedInstanceState.getInt("tie1");
-            tie2 = savedInstanceState.getInt("tie2");
-            player1TieSet1 = savedInstanceState.getInt("player1TieSet1");
-            player2TieSet1 = savedInstanceState.getInt("player2TieSet1");
-            player1TieSet2 = savedInstanceState.getInt("player1TieSet2");
-            player2TieSet2 = savedInstanceState.getInt("player2TieSet2");
-            player1TieSet3 = savedInstanceState.getInt("player1TieSet3");
-            player2TieSet3 = savedInstanceState.getInt("player2TieSet3");
-            player1TieSet4 = savedInstanceState.getInt("player1TieSet4");
-            player2TieSet4 = savedInstanceState.getInt("player2TieSet4");
-            player1TieSet5 = savedInstanceState.getInt("player1TieSet5");
-            player2TieSet5 = savedInstanceState.getInt("player2TieSet5");
-            pointsWonPlayer1 = savedInstanceState.getInt("pointsWonPlayer1");
-            pointsWonPlayer2 = savedInstanceState.getInt("pointsWonPlayer2");
-            acePlayer1 = savedInstanceState.getInt("acePlayer1");
-            acePlayer2 = savedInstanceState.getInt("acePlayer2");
-            winPlayer1 = savedInstanceState.getInt("winPlayer1");
-            winPlayer2 = savedInstanceState.getInt("winPlayer1");
-            errPlayer1 = savedInstanceState.getInt("errPlayer1");
-            errPlayer2 = savedInstanceState.getInt("errPlayer1");
-            setsWonPlayer1 = savedInstanceState.getInt("setsWonPlayer1");
-            setsWonPlayer2 = savedInstanceState.getInt("setsWonPlayer2");
+            scorePlayer1Set1 = savedInstanceState.getInt(SCORE_PLAYER1_SET1_SAVED);
+            scorePlayer1Set2 = savedInstanceState.getInt(SCORE_PLAYER1_SET2_SAVED);
+            scorePlayer1Set3 = savedInstanceState.getInt(SCORE_PLAYER1_SET3_SAVED);
+            scorePlayer1Set4 = savedInstanceState.getInt(SCORE_PLAYER1_SET4_SAVED);
+            scorePlayer1Set5 = savedInstanceState.getInt(SCORE_PLAYER1_SET5_SAVED);
+            scorePlayer2Set1 = savedInstanceState.getInt(SCORE_PLAYER2_SET1_SAVED);
+            scorePlayer2Set2 = savedInstanceState.getInt(SCORE_PLAYER2_SET2_SAVED);
+            scorePlayer2Set3 = savedInstanceState.getInt(SCORE_PLAYER2_SET3_SAVED);
+            scorePlayer2Set4 = savedInstanceState.getInt(SCORE_PLAYER2_SET4_SAVED);
+            scorePlayer2Set5 = savedInstanceState.getInt(SCORE_PLAYER2_SET5_SAVED);
+            scorePlayer1 = savedInstanceState.getInt(SCORE_PLAYER1_SAVED);
+            scorePlayer2 = savedInstanceState.getInt(SCORE_PLAYER2_SAVED);
+            Advantage1 = savedInstanceState.getString(ADVANTAGE1_SAVED);
+            Advantage2 = savedInstanceState.getString(ADVANTAGE2_SAVED);
+            tie1 = savedInstanceState.getInt(TIE1_SAVED);
+            tie2 = savedInstanceState.getInt(TIE2_SAVED);
+            player1TieSet1 = savedInstanceState.getInt(TIE_PLAYER1_SET1_SAVED);
+            player2TieSet1 = savedInstanceState.getInt(TIE_PLAYER2_SET1_SAVED);
+            player1TieSet2 = savedInstanceState.getInt(TIE_PLAYER1_SET2_SAVED);
+            player2TieSet2 = savedInstanceState.getInt(TIE_PLAYER2_SET2_SAVED);
+            player1TieSet3 = savedInstanceState.getInt(TIE_PLAYER1_SET3_SAVED);
+            player2TieSet3 = savedInstanceState.getInt(TIE_PLAYER2_SET3_SAVED);
+            player1TieSet4 = savedInstanceState.getInt(TIE_PLAYER1_SET4_SAVED);
+            player2TieSet4 = savedInstanceState.getInt(TIE_PLAYER2_SET4_SAVED);
+            player1TieSet5 = savedInstanceState.getInt(TIE_PLAYER1_SET5_SAVED);
+            player2TieSet5 = savedInstanceState.getInt(TIE_PLAYER2_SET5_SAVED);
+            pointsWonPlayer1 = savedInstanceState.getInt(POINTS_WON_PLAYER1_SAVED);
+            pointsWonPlayer2 = savedInstanceState.getInt(POINTS_WON_PLAYER2_SAVED);
+            acePlayer1 = savedInstanceState.getInt(ACE_PLAYER1_SAVED);
+            acePlayer2 = savedInstanceState.getInt(ACE_PLAYER2_SAVED);
+            winPlayer1 = savedInstanceState.getInt(WIN_PLAYER1_SAVED);
+            winPlayer2 = savedInstanceState.getInt(WIN_PLAYER2_SAVED);
+            errPlayer1 = savedInstanceState.getInt(ERR_PLAYER1_SAVED);
+            errPlayer2 = savedInstanceState.getInt(ERR_PLAYER2_SAVED);
+            setsWonPlayer1 = savedInstanceState.getInt(SETS_WON_PLAYER1_SAVED);
+            setsWonPlayer2 = savedInstanceState.getInt(SETS_WON_PLAYER2_SAVED);
         }
         this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
         setContentView(R.layout.activity_main);
@@ -313,7 +349,7 @@ public class FiveSetsActivity extends AppCompatActivity {
         tieSet5Player2 = (TextView) findViewById(R.id.set_5_tie_player2);
         tieSetsInvisible();
 
-        txtSet1Pl1 = (TextView) findViewById(R.id.set_1_score_player1);
+     /*   txtSet1Pl1 = (TextView) findViewById(R.id.set_1_score_player1);
         txtSet2Pl1 = (TextView) findViewById(R.id.set_2_score_player1);
         txtSet3Pl1 = (TextView) findViewById(R.id.set_3_score_player1);
         txtSet4Pl1 = (TextView) findViewById(R.id.set_4_score_player1);
@@ -322,7 +358,7 @@ public class FiveSetsActivity extends AppCompatActivity {
         txtSet2Pl2 = (TextView) findViewById(R.id.set_2_score_player2);
         txtSet3Pl2 = (TextView) findViewById(R.id.set_3_score_player2);
         txtSet4Pl2 = (TextView) findViewById(R.id.set_4_score_player2);
-        txtSet5Pl2 = (TextView) findViewById(R.id.set_5_score_player2);
+        txtSet5Pl2 = (TextView) findViewById(R.id.set_5_score_player2);*/
         cardSet4Pl1 = (CardView) findViewById(R.id.card_4_set_player1);
         cardSet5Pl1 = (CardView) findViewById(R.id.card_5_set_player1);
         cardSet4Pl2 = (CardView) findViewById(R.id.card_4_set_player2);
@@ -656,10 +692,7 @@ public class FiveSetsActivity extends AppCompatActivity {
         } else if ((scorePlayer2Set1 > scorePlayer1Set1) & ((scorePlayer2Set1 >= 6 & scorePlayer1Set1 < 5) | (scorePlayer2Set1 == 7 & scorePlayer1Set1 >= 5))) {
             setsWonPlayer2 = setsWonPlayer2 + 1;
         }
-        System.out.println(scorePlayer1Set1);
-        System.out.println(scorePlayer2Set1);
-        System.out.println(setsWonPlayer1);
-        System.out.println(setsWonPlayer2);
+
     }
 
     public void comparePointsSet2() {
@@ -675,10 +708,6 @@ public class FiveSetsActivity extends AppCompatActivity {
         } else if ((scorePlayer2Set2 > scorePlayer1Set2) & ((scorePlayer2Set2 >= 6 & scorePlayer1Set2 < 5) | (scorePlayer2Set2 == 7 & scorePlayer1Set2 >= 5))) {
             setsWonPlayer2 = setsWonPlayer2 + 1;
         }
-        System.out.println(scorePlayer1Set2);
-        System.out.println(scorePlayer2Set2);
-        System.out.println(setsWonPlayer1);
-        System.out.println(setsWonPlayer2);
     }
 
     public void comparePointsSet3() {
@@ -691,13 +720,9 @@ public class FiveSetsActivity extends AppCompatActivity {
         }
         if ((scorePlayer1Set3 > scorePlayer2Set3) & ((scorePlayer1Set3 >= 6 & scorePlayer2Set3 < 5) | (scorePlayer1Set3 == 7 & scorePlayer2Set3 >= 5))) {
             setsWonPlayer1 = setsWonPlayer1 + 1;
-        } else if ((scorePlayer2Set3 > scorePlayer1Set3) & (scorePlayer2Set3 >= 6 & scorePlayer1Set3 < 5) | (scorePlayer2Set3 == 7 & scorePlayer1Set3 >= 5)) {
+        } else if ((scorePlayer2Set3 > scorePlayer1Set3) & ((scorePlayer2Set3 >= 6 & scorePlayer1Set3 < 5) | (scorePlayer2Set3 == 7 & scorePlayer1Set3 >= 5))) {
             setsWonPlayer2 = setsWonPlayer2 + 1;
         }
-        System.out.println(scorePlayer1Set3);
-        System.out.println(scorePlayer2Set3);
-        System.out.println(setsWonPlayer1);
-        System.out.println(setsWonPlayer2);
         matchWon();
     }
 
@@ -714,6 +739,10 @@ public class FiveSetsActivity extends AppCompatActivity {
         } else if ((scorePlayer2Set4 > scorePlayer1Set4) & ((scorePlayer2Set4 >= 6 & scorePlayer1Set4 < 5) | (scorePlayer2Set4 == 7 & scorePlayer1Set4 >= 5))) {
             setsWonPlayer2 = setsWonPlayer2 + 1;
         }
+        System.out.println(scorePlayer1Set4);
+        System.out.println(scorePlayer2Set4);
+        System.out.println(setsWonPlayer1);
+        System.out.println(setsWonPlayer2);
         matchWon();
     }
 
@@ -737,7 +766,7 @@ public class FiveSetsActivity extends AppCompatActivity {
             if ((scorePlayer1Set5 - scorePlayer2Set5 == 2) & (scorePlayer1Set5 >= 6 & scorePlayer2Set5 >= 6)){
                 setsWonPlayer1 = setsWonPlayer1 + 1;
             }
-            else if ((scorePlayer2Set5 - scorePlayer1Set5 == 2) &(scorePlayer1Set5 >= 6 & scorePlayer2Set5 >= 6)){
+            else if ((scorePlayer2Set5 - scorePlayer1Set5 == 2) & (scorePlayer1Set5 >= 6 & scorePlayer2Set5 >= 6)){
                 setsWonPlayer2 = setsWonPlayer2 + 1;
             }
             matchWon();
@@ -1045,6 +1074,7 @@ public class FiveSetsActivity extends AppCompatActivity {
      * Resets all score
      */
     public void resetAll(View view) {
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
         scorePlayer1 = 0;
         scorePlayer2 = 0;
         Advantage1 = "";

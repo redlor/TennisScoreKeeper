@@ -66,67 +66,100 @@ public class ThreeSetsActivity extends AppCompatActivity {
     private CardView cardSet3Pl1, cardSet3Pl2, cardPointsPl1, cardPointsPl2;
     private Button btnPointPlayer1, btnPointPlayer2, btnAcePlayer1, btnAcePlayer2, btnWinnerPlayer1, btnWinnerPlayer2, btnErrorPlayer1, btnErrorPlayer2;
 
+    static final String SCORE_PLAYER1_SET1_SAVED = "scorePlayer1Set1";
+    static final String SCORE_PLAYER1_SET2_SAVED = "scorePlayer1Set2";
+    static final String SCORE_PLAYER1_SET3_SAVED = "scorePlayer1Set3";
+    static final String SCORE_PLAYER2_SET1_SAVED = "scorePlayer2Set1";
+    static final String SCORE_PLAYER2_SET2_SAVED = "scorePlayer2Set2";
+    static final String SCORE_PLAYER2_SET3_SAVED = "scorePlayer2Set3";
+    static final String SCORE_PLAYER1_SAVED = "scorePlayer1";
+    static final String SCORE_PLAYER2_SAVED = "scorePlayer2";
+    static final String TIE1_SAVED = "tie1";
+    static final String TIE2_SAVED = "tie2";
+    static final String ADVANTAGE1_SAVED = "Advantage1";
+    static final String ADVANTAGE2_SAVED = "Advantage2";
+    static final String TIE_PLAYER1_SET1_SAVED = "player1TieSet1";
+    static final String TIE_PLAYER1_SET2_SAVED = "player1TieSet2";
+    static final String TIE_PLAYER1_SET3_SAVED = "player1TieSet3";
+    static final String TIE_PLAYER2_SET1_SAVED = "player2TieSet1";
+    static final String TIE_PLAYER2_SET2_SAVED = "player2TieSet2";
+    static final String TIE_PLAYER2_SET3_SAVED = "player2TieSet3";
+    static final String POINTS_WON_PLAYER1_SAVED = "pointsWonPlayer1";
+    static final String POINTS_WON_PLAYER2_SAVED = "pointsWonPlayer2";
+    static final String ACE_PLAYER1_SAVED = "acePlayer1";
+    static final String ACE_PLAYER2_SAVED = "acePlayer2";
+    static final String WIN_PLAYER1_SAVED = "winPlayer1";
+    static final String WIN_PLAYER2_SAVED = "winPlayer2";
+    static final String ERR_PLAYER1_SAVED = "errPlayer1";
+    static final String ERR_PLAYER2_SAVED = "errPlayer2";
+    static final String SETS_WON_PLAYER1_SAVED = "setsWonPlayer1";
+    static final String SETS_WON_PLAYER2_SAVED = "setsWonPlayer2";
+
     @Override
     protected void onSaveInstanceState(Bundle outState) {               // save variable to temporary variable
         super.onSaveInstanceState(outState);
-        outState.putInt("scorePlayer1Set1", scorePlayer1Set1);
-        outState.putInt("scorePlayer1Set2", scorePlayer1Set2);
-        outState.putInt("scorePlayer1Set3", scorePlayer1Set3);
-        outState.putInt("scorePlayer2Set1", scorePlayer2Set1);
-        outState.putInt("scorePlayer2Set2", scorePlayer2Set2);
-        outState.putInt("scorePlayer2Set3", scorePlayer2Set3);
-        outState.putInt("scorePlayer1", scorePlayer1);
-        outState.putInt("scorePlayer2", scorePlayer2);
-        outState.putInt("tie1", tie1);
-        outState.putInt("tie2", tie2);
-        outState.putInt("player1TieSet1", player1TieSet1);
-        outState.putInt("player2TieSet1", player2TieSet1);
-        outState.putInt("player1TieSet2", player1TieSet2);
-        outState.putInt("player2TieSet2", player2TieSet2);
-        outState.putInt("player1TieSet3", player1TieSet3);
-        outState.putInt("player2TieSet3", player2TieSet3);
-        outState.putString("Advantage1", Advantage1);
-        outState.putString("Advantage2", Advantage2);
-        outState.putInt("pointsWonPlayer1", pointsWonPlayer1);
-        outState.putInt("pointsWonPlayer2", pointsWonPlayer2);
-        outState.putInt("acePlayer1", acePlayer1);
-        outState.putInt("acePlayer2", acePlayer2);
-        outState.putInt("winPlayer1", winPlayer1);
-        outState.putInt("winPlayer2", winPlayer2);
-        outState.putInt("errPlayer1", errPlayer1);
-        outState.putInt("errPlayer2", errPlayer2);
+        outState.putInt(SCORE_PLAYER1_SET1_SAVED, scorePlayer1Set1);
+        outState.putInt(SCORE_PLAYER1_SET2_SAVED, scorePlayer1Set2);
+        outState.putInt(SCORE_PLAYER1_SET3_SAVED, scorePlayer1Set3);
+        outState.putInt(SCORE_PLAYER2_SET1_SAVED, scorePlayer2Set1);
+        outState.putInt(SCORE_PLAYER2_SET2_SAVED, scorePlayer2Set2);
+        outState.putInt(SCORE_PLAYER2_SET3_SAVED, scorePlayer2Set3);
+        outState.putInt(SCORE_PLAYER1_SAVED, scorePlayer1);
+        outState.putInt(SCORE_PLAYER2_SAVED, scorePlayer2);
+        outState.putInt(TIE1_SAVED, tie1);
+        outState.putInt(TIE2_SAVED, tie2);
+        outState.putInt(TIE_PLAYER1_SET1_SAVED, player1TieSet1);
+        outState.putInt(TIE_PLAYER2_SET1_SAVED, player2TieSet1);
+        outState.putInt(TIE_PLAYER1_SET2_SAVED, player1TieSet2);
+        outState.putInt(TIE_PLAYER2_SET2_SAVED, player2TieSet2);
+        outState.putInt(TIE_PLAYER1_SET3_SAVED, player1TieSet3);
+        outState.putInt(TIE_PLAYER2_SET3_SAVED, player2TieSet3);
+        outState.putString(ADVANTAGE1_SAVED, Advantage1);
+        outState.putString(ADVANTAGE2_SAVED, Advantage2);
+        outState.putInt(POINTS_WON_PLAYER1_SAVED, pointsWonPlayer1);
+        outState.putInt(POINTS_WON_PLAYER2_SAVED, pointsWonPlayer2);
+        outState.putInt(ACE_PLAYER1_SAVED, acePlayer1);
+        outState.putInt(ACE_PLAYER2_SAVED, acePlayer2);
+        outState.putInt(WIN_PLAYER1_SAVED, winPlayer1);
+        outState.putInt(WIN_PLAYER2_SAVED, winPlayer2);
+        outState.putInt(ERR_PLAYER1_SAVED, errPlayer1);
+        outState.putInt(ERR_PLAYER2_SAVED, errPlayer2);
+        outState.putInt(SETS_WON_PLAYER1_SAVED, setsWonPlayer1);
+        outState.putInt(SETS_WON_PLAYER2_SAVED, setsWonPlayer2);
 
 
     }
 
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {       //restore value
-        scorePlayer1Set1 = savedInstanceState.getInt("scorePlayer1Set1");
-        scorePlayer1Set2 = savedInstanceState.getInt("scorePlayer1Set2");
-        scorePlayer1Set3 = savedInstanceState.getInt("scorePlayer1Set3");
-        scorePlayer2Set1 = savedInstanceState.getInt("scorePlayer2Set1");
-        scorePlayer2Set2 = savedInstanceState.getInt("scorePlayer2Set2");
-        scorePlayer2Set3 = savedInstanceState.getInt("scorePlayer2Set3");
-        scorePlayer1 = savedInstanceState.getInt("scorePlayer1");
-        scorePlayer2 = savedInstanceState.getInt("scorePlayer2");
-        Advantage1 = savedInstanceState.getString("Advantage1");
-        Advantage2 = savedInstanceState.getString("Advantage2");
-        tie1 = savedInstanceState.getInt("tie1");
-        tie2 = savedInstanceState.getInt("tie2");
-        player1TieSet1 = savedInstanceState.getInt("player1TieSet1");
-        player2TieSet1 = savedInstanceState.getInt("player2TieSet1");
-        player1TieSet2 = savedInstanceState.getInt("player1TieSet2");
-        player2TieSet2 = savedInstanceState.getInt("player2TieSet2");
-        player1TieSet3 = savedInstanceState.getInt("player1TieSet3");
-        player2TieSet3 = savedInstanceState.getInt("player2TieSet3");
-        pointsWonPlayer1 = savedInstanceState.getInt("pointsWonPlayer1");
-        pointsWonPlayer2 = savedInstanceState.getInt("pointsWonPlayer2");
-        acePlayer1 = savedInstanceState.getInt("acePlayer1");
-        acePlayer2 = savedInstanceState.getInt("acePlayer2");
-        winPlayer1 = savedInstanceState.getInt("winPlayer1");
-        winPlayer2 = savedInstanceState.getInt("winPlayer1");
-        errPlayer1 = savedInstanceState.getInt("errPlayer1");
-        errPlayer2 = savedInstanceState.getInt("errPlayer1");
+        scorePlayer1Set1 = savedInstanceState.getInt(SCORE_PLAYER1_SET1_SAVED);
+        scorePlayer1Set2 = savedInstanceState.getInt(SCORE_PLAYER1_SET2_SAVED);
+        scorePlayer1Set3 = savedInstanceState.getInt(SCORE_PLAYER1_SET3_SAVED);
+        scorePlayer2Set1 = savedInstanceState.getInt(SCORE_PLAYER2_SET1_SAVED);
+        scorePlayer2Set2 = savedInstanceState.getInt(SCORE_PLAYER2_SET2_SAVED);
+        scorePlayer2Set3 = savedInstanceState.getInt(SCORE_PLAYER2_SET3_SAVED);
+        scorePlayer1 = savedInstanceState.getInt(SCORE_PLAYER1_SAVED);
+        scorePlayer2 = savedInstanceState.getInt(SCORE_PLAYER2_SAVED);
+        Advantage1 = savedInstanceState.getString(ADVANTAGE1_SAVED);
+        Advantage2 = savedInstanceState.getString(ADVANTAGE2_SAVED);
+        tie1 = savedInstanceState.getInt(TIE1_SAVED);
+        tie2 = savedInstanceState.getInt(TIE2_SAVED);
+        player1TieSet1 = savedInstanceState.getInt(TIE_PLAYER1_SET1_SAVED);
+        player2TieSet1 = savedInstanceState.getInt(TIE_PLAYER2_SET1_SAVED);
+        player1TieSet2 = savedInstanceState.getInt(TIE_PLAYER1_SET2_SAVED);
+        player2TieSet2 = savedInstanceState.getInt(TIE_PLAYER2_SET2_SAVED);
+        player1TieSet3 = savedInstanceState.getInt(TIE_PLAYER1_SET3_SAVED);
+        player2TieSet3 = savedInstanceState.getInt(TIE_PLAYER2_SET3_SAVED);
+        pointsWonPlayer1 = savedInstanceState.getInt(POINTS_WON_PLAYER1_SAVED);
+        pointsWonPlayer2 = savedInstanceState.getInt(POINTS_WON_PLAYER2_SAVED);
+        acePlayer1 = savedInstanceState.getInt(ACE_PLAYER1_SAVED);
+        acePlayer2 = savedInstanceState.getInt(ACE_PLAYER2_SAVED);
+        winPlayer1 = savedInstanceState.getInt(WIN_PLAYER1_SAVED);
+        winPlayer2 = savedInstanceState.getInt(WIN_PLAYER2_SAVED);
+        errPlayer1 = savedInstanceState.getInt(ERR_PLAYER1_SAVED);
+        errPlayer2 = savedInstanceState.getInt(ERR_PLAYER2_SAVED);
+        setsWonPlayer1 = savedInstanceState.getInt(SETS_WON_PLAYER1_SAVED);
+        setsWonPlayer2 = savedInstanceState.getInt(SETS_WON_PLAYER2_SAVED);
 
 
         if (Advantage1.equals("AD") | Advantage2.equals("AD")) {
@@ -143,19 +176,19 @@ public class ThreeSetsActivity extends AppCompatActivity {
             displayForPlayer1(scorePlayer1);
             displayForPlayer2(scorePlayer2);
         }
-        if (player1TieSet1 > 0 | player2TieSet1 > 0) {
+        if ((player1TieSet1 > 0 | player2TieSet1 > 0) & (scorePlayer1Set1 > 6 | scorePlayer2Set1 > 6)) {
             tieSet1Player1.setVisibility(View.VISIBLE);
             tieSet1Player2.setVisibility(View.VISIBLE);
             displayTiePlayer1Set1(player1TieSet1);
             displayTiePlayer2Set1(player2TieSet1);
         }
-        if (player1TieSet2 > 0 | player2TieSet2 > 0) {
+        if ((player1TieSet2 > 0 | player2TieSet2 > 0) & (scorePlayer1Set2 > 6 | scorePlayer2Set2 > 6)) {
             tieSet2Player1.setVisibility(View.VISIBLE);
             tieSet2Player2.setVisibility(View.VISIBLE);
             displayTiePlayer1Set2(player1TieSet2);
             displayTiePlayer2Set2(player2TieSet2);
         }
-        if (player1TieSet3 > 0 | player2TieSet3 > 0) {
+        if ((player1TieSet3 > 0 | player2TieSet3 > 0) & (scorePlayer1Set3 > 6 | scorePlayer2Set3 > 6))  {
             tieSet3Player1.setVisibility(View.VISIBLE);
             tieSet3Player2.setVisibility(View.VISIBLE);
             displayTiePlayer1Set3(player1TieSet3);
@@ -182,32 +215,34 @@ public class ThreeSetsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (savedInstanceState != null) {
-            scorePlayer1Set1 = savedInstanceState.getInt("scorePlayer1Set1");
-            scorePlayer1Set2 = savedInstanceState.getInt("scorePlayer1Set2");
-            scorePlayer1Set3 = savedInstanceState.getInt("scorePlayer1Set3");
-            scorePlayer2Set1 = savedInstanceState.getInt("scorePlayer2Set1");
-            scorePlayer2Set2 = savedInstanceState.getInt("scorePlayer2Set2");
-            scorePlayer2Set3 = savedInstanceState.getInt("scorePlayer2Set3");
-            scorePlayer1 = savedInstanceState.getInt("scorePlayer1");
-            scorePlayer2 = savedInstanceState.getInt("scorePlayer2");
-            Advantage1 = savedInstanceState.getString("Advantage1");
-            Advantage2 = savedInstanceState.getString("Advantage2");
-            tie1 = savedInstanceState.getInt("tie1");
-            tie2 = savedInstanceState.getInt("tie2");
-            player1TieSet1 = savedInstanceState.getInt("player1TieSet1");
-            player2TieSet1 = savedInstanceState.getInt("player2TieSet1");
-            player1TieSet2 = savedInstanceState.getInt("player1TieSet2");
-            player2TieSet2 = savedInstanceState.getInt("player2TieSet2");
-            player1TieSet3 = savedInstanceState.getInt("player1TieSet3");
-            player2TieSet3 = savedInstanceState.getInt("player2TieSet3");
-            pointsWonPlayer1 = savedInstanceState.getInt("pointsWonPlayer1");
-            pointsWonPlayer2 = savedInstanceState.getInt("pointsWonPlayer2");
-            acePlayer1 = savedInstanceState.getInt("acePlayer1");
-            acePlayer2 = savedInstanceState.getInt("acePlayer2");
-            winPlayer1 = savedInstanceState.getInt("winPlayer1");
-            winPlayer2 = savedInstanceState.getInt("winPlayer1");
-            errPlayer1 = savedInstanceState.getInt("errPlayer1");
-            errPlayer2 = savedInstanceState.getInt("errPlayer1");
+            scorePlayer1Set1 = savedInstanceState.getInt(SCORE_PLAYER1_SET1_SAVED);
+            scorePlayer1Set2 = savedInstanceState.getInt(SCORE_PLAYER1_SET2_SAVED);
+            scorePlayer1Set3 = savedInstanceState.getInt(SCORE_PLAYER1_SET3_SAVED);
+            scorePlayer2Set1 = savedInstanceState.getInt(SCORE_PLAYER2_SET1_SAVED);
+            scorePlayer2Set2 = savedInstanceState.getInt(SCORE_PLAYER2_SET2_SAVED);
+            scorePlayer2Set3 = savedInstanceState.getInt(SCORE_PLAYER2_SET3_SAVED);
+            scorePlayer1 = savedInstanceState.getInt(SCORE_PLAYER1_SAVED);
+            scorePlayer2 = savedInstanceState.getInt(SCORE_PLAYER2_SAVED);
+            Advantage1 = savedInstanceState.getString(ADVANTAGE1_SAVED);
+            Advantage2 = savedInstanceState.getString(ADVANTAGE2_SAVED);
+            tie1 = savedInstanceState.getInt(TIE1_SAVED);
+            tie2 = savedInstanceState.getInt(TIE2_SAVED);
+            player1TieSet1 = savedInstanceState.getInt(TIE_PLAYER1_SET1_SAVED);
+            player2TieSet1 = savedInstanceState.getInt(TIE_PLAYER2_SET1_SAVED);
+            player1TieSet2 = savedInstanceState.getInt(TIE_PLAYER1_SET2_SAVED);
+            player2TieSet2 = savedInstanceState.getInt(TIE_PLAYER2_SET2_SAVED);
+            player1TieSet3 = savedInstanceState.getInt(TIE_PLAYER1_SET3_SAVED);
+            player2TieSet3 = savedInstanceState.getInt(TIE_PLAYER2_SET3_SAVED);
+            pointsWonPlayer1 = savedInstanceState.getInt(POINTS_WON_PLAYER1_SAVED);
+            pointsWonPlayer2 = savedInstanceState.getInt(POINTS_WON_PLAYER2_SAVED);
+            acePlayer1 = savedInstanceState.getInt(ACE_PLAYER1_SAVED);
+            acePlayer2 = savedInstanceState.getInt(ACE_PLAYER2_SAVED);
+            winPlayer1 = savedInstanceState.getInt(WIN_PLAYER1_SAVED);
+            winPlayer2 = savedInstanceState.getInt(WIN_PLAYER2_SAVED);
+            errPlayer1 = savedInstanceState.getInt(ERR_PLAYER1_SAVED);
+            errPlayer2 = savedInstanceState.getInt(ERR_PLAYER2_SAVED);
+            setsWonPlayer1 = savedInstanceState.getInt(SETS_WON_PLAYER1_SAVED);
+            setsWonPlayer2 = savedInstanceState.getInt(SETS_WON_PLAYER2_SAVED);
         }
         this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
         setContentView(R.layout.activity_three_sets);
@@ -580,6 +615,10 @@ public class ThreeSetsActivity extends AppCompatActivity {
         } else if ((scorePlayer2Set2 > scorePlayer1Set2) & ((scorePlayer2Set2 >= 6 & scorePlayer1Set2 < 5) | (scorePlayer2Set2 == 7 & scorePlayer1Set2 >= 5))) {
             setsWonPlayer2 = setsWonPlayer2 + 1;
         }
+        System.out.println(scorePlayer1Set2);
+        System.out.println(scorePlayer2Set2);
+        System.out.println(setsWonPlayer1);
+        System.out.println(setsWonPlayer2);
        matchWon();
     }
 
@@ -597,15 +636,23 @@ public class ThreeSetsActivity extends AppCompatActivity {
             } else if ((scorePlayer2Set3 > scorePlayer1Set3) & ((scorePlayer2Set3 >= 6 & scorePlayer1Set3 < 5) | (scorePlayer2Set3 == 7 & scorePlayer1Set3 >= 5))) {
                 setsWonPlayer2 = setsWonPlayer2 + 1;
             }
+            System.out.println(scorePlayer1Set3);
+            System.out.println(scorePlayer2Set3);
+            System.out.println(setsWonPlayer1);
+            System.out.println(setsWonPlayer2);
             matchWon();
         }
         else if (!(tieTrue)) {
             if ((scorePlayer1Set3 - scorePlayer2Set3 == 2) & (scorePlayer1Set3 >= 6 & scorePlayer2Set3 >= 6)){
                 setsWonPlayer1 = setsWonPlayer1 + 1;
             }
-            else if ((scorePlayer2Set3 - scorePlayer1Set3 == 2) &(scorePlayer1Set3 >= 6 & scorePlayer2Set3 >= 6)){
+            else if ((scorePlayer2Set3 - scorePlayer1Set3 == 2) & (scorePlayer1Set3 >= 6 & scorePlayer2Set3 >= 6)){
                 setsWonPlayer2 = setsWonPlayer2 + 1;
             }
+            System.out.println(scorePlayer1Set3);
+            System.out.println(scorePlayer2Set3);
+            System.out.println(setsWonPlayer1);
+            System.out.println(setsWonPlayer2);
             matchWon();
         }
     }
@@ -860,6 +907,7 @@ public class ThreeSetsActivity extends AppCompatActivity {
      * Resets all score
      */
     public void resetAll(View view) {
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
         scorePlayer1 = 0;
         scorePlayer2 = 0;
         Advantage1 = "";

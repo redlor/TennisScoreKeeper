@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/tennisfield"
+    tools:context="com.example.android.tennisscorekeeper.ThreeSetsActivity"
+    android:orientation="vertical">
+<LinearLayout
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/tennisfield"
-    android:orientation="vertical"
-    tools:context="com.example.android.tennisscorekeeper.ThreeSetsActivity">
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -328,11 +332,6 @@
         </LinearLayout>
     </LinearLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginTop="@dimen/smallMargin"
-        android:background="@android:color/holo_orange_light" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -396,3 +395,4 @@
 
 </LinearLayout>
 
+</ScrollView>
