@@ -349,7 +349,6 @@ public class FiveSetsActivity extends AppCompatActivity {
         tieSet5Player2 = (TextView) findViewById(R.id.set_5_tie_player2);
         tieSetsInvisible();
 
-
         cardSet4Pl1 = (CardView) findViewById(R.id.card_4_set_player1);
         cardSet5Pl1 = (CardView) findViewById(R.id.card_5_set_player1);
         cardSet4Pl2 = (CardView) findViewById(R.id.card_4_set_player2);
